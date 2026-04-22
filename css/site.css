@@ -1,0 +1,529 @@
+/* SpinBook static marketing — typography matches WebTopBar (marketing shell) + MarketingWebHomeScreen.web.js */
+:root {
+  --page-bg: #0b0e13;
+  --scrim: rgba(11, 14, 19, 0.78);
+  --heading: #f2f5fa;
+  --body: #d2dae6;
+  --muted: #9aa8bc;
+  --label: #c8d7ea;
+  --accent: #2ecc71;
+  /* MARKETING_TOP in WebTopBar.js */
+  --bar-bg: #0b0e13;
+  --bar-border: rgba(46, 204, 113, 0.28);
+  --marketing-brand: #f2f5fa;
+  --marketing-brand-tag: rgba(200, 215, 234, 0.88);
+  --max-width: 720px;
+  /* Store badges: identical outer box; artwork scales inside (PNG vs SVG differ in padding) */
+  --store-badge-box-w: min(186px, 44vw);
+  --store-badge-box-h: 58px;
+  /* RN Web default stack (no custom font in app — system UI) */
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font);
+  background: var(--page-bg);
+  color: var(--body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: var(--accent);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.bg-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.bg-layer img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.95;
+}
+
+.bg-scrim {
+  position: absolute;
+  inset: 0;
+  background: var(--scrim);
+}
+
+.page {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-header {
+  background: var(--bar-bg);
+  border-bottom: 1px solid var(--bar-border);
+  /* WebTopBar `bar`: paddingHorizontal 12 + marketing top/bottom padding ~10 */
+  padding: max(env(safe-area-inset-top), 10px) 12px 10px 12px;
+}
+
+.header-inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  /* WebTopBar `rowThree` minHeight */
+  min-height: 40px;
+}
+
+/* Balance column removed — language control is pinned right */
+.header-inner > [aria-hidden="true"] {
+  display: none;
+}
+
+.brand-block {
+  text-align: center;
+  min-width: 0;
+  max-width: min(100%, var(--max-width));
+  /* Reserve horizontal space so the title does not sit under the language control (~104px in app) */
+  padding: 0 clamp(56px, 22vw, 120px);
+}
+
+/* WebTopBar `marketingBrandHero` */
+.brand-title {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 0.65px;
+  text-align: center;
+  color: var(--marketing-brand);
+  text-shadow: 0 0 12px rgba(46, 204, 113, 0.2);
+}
+
+/* WebTopBar `marketingBrandTag` */
+.brand-tag {
+  display: block;
+  margin: 4px auto 0;
+  max-width: 280px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.35;
+  color: var(--marketing-brand-tag);
+}
+
+.lang-slot {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.lang-flag {
+  flex-shrink: 0;
+  width: 24px;
+  height: 18px;
+  object-fit: cover;
+  border-radius: 2px;
+  vertical-align: middle;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12);
+}
+
+.lang-picker {
+  position: relative;
+}
+
+.lang-picker > summary {
+  list-style: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: var(--label);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.lang-picker > summary::-webkit-details-marker {
+  display: none;
+}
+
+.lang-picker[open] > summary {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.lang-menu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 6px);
+  min-width: 220px;
+  max-height: min(70vh, 420px);
+  overflow: auto;
+  margin: 0;
+  padding: 8px;
+  list-style: none;
+  background: #12161f;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+  z-index: 20;
+}
+
+.lang-menu a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  color: var(--heading);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.lang-menu a:hover {
+  background: rgba(255, 255, 255, 0.06);
+  text-decoration: none;
+}
+
+.lang-menu a[aria-current="page"] {
+  background: rgba(46, 204, 113, 0.15);
+  color: var(--accent);
+}
+
+main {
+  flex: 1;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 36px 24px 48px;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-icon {
+  width: 120px;
+  height: 120px;
+  border-radius: 26px;
+  margin: 4px 0 22px;
+}
+
+.accent-bar {
+  width: 56px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--accent);
+  margin-bottom: 20px;
+}
+
+/* MarketingWebHomeScreen `headline` */
+.headline {
+  margin: 0 0 12px;
+  padding: 0 4px;
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 30px;
+  text-align: center;
+  color: var(--heading);
+  max-width: 22ch;
+}
+
+/* MarketingWebHomeScreen `scanSub` */
+.scan-line {
+  margin: 0 0 22px;
+  font-size: 15px;
+  line-height: 1.4;
+  text-align: center;
+  color: var(--body);
+  max-width: 32ch;
+}
+
+.qr-frame {
+  padding: 16px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.96);
+  margin-bottom: 28px;
+}
+
+.qr-inner {
+  position: relative;
+  width: 154px;
+  height: 154px;
+}
+
+.qr-inner img {
+  width: 154px;
+  height: 154px;
+  display: block;
+}
+
+.qr-logo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: #fff;
+  padding: 3px;
+  box-shadow: 0 1px 4px rgba(11, 14, 19, 0.12);
+  border: 1px solid rgba(11, 14, 19, 0.12);
+}
+
+.qr-logo img {
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+  display: block;
+}
+
+/* Official store badges — same width × height for both links; <img> uses contain inside the box */
+.store-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.store-badge-link {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: var(--store-badge-box-w);
+  height: var(--store-badge-box-h);
+  text-decoration: none;
+  line-height: 0;
+}
+
+.store-badge-link:hover {
+  opacity: 0.9;
+  text-decoration: none;
+}
+
+.store-badge-img {
+  display: block;
+  flex-shrink: 0;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.site-footer {
+  margin-top: auto;
+  padding: 24px 16px max(env(safe-area-inset-bottom), 24px);
+  text-align: center;
+}
+
+.footer-links {
+  margin-bottom: 10px;
+  font-size: 0.88rem;
+}
+
+.footer-links a {
+  color: var(--label);
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+  color: var(--heading);
+}
+
+.footer-sep {
+  color: var(--muted);
+  margin: 0 4px;
+}
+
+.copyright {
+  margin: 0;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+/* Legal & contact inner pages */
+.legal-header {
+  margin-bottom: 20px;
+}
+
+.back-row {
+  margin-bottom: 16px;
+}
+
+.back-link {
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.legal-doc {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.legal-doc h1 {
+  font-size: 1.5rem;
+  color: var(--heading);
+  margin: 0 0 16px;
+}
+
+.legal-doc h2 {
+  font-size: 1.15rem;
+  color: var(--heading);
+  margin: 28px 0 12px;
+}
+
+.legal-doc h3 {
+  font-size: 1rem;
+  color: var(--heading);
+  margin: 20px 0 8px;
+}
+
+.legal-doc p,
+.legal-doc li {
+  line-height: 1.55;
+  color: var(--body);
+}
+
+.legal-doc ul,
+.legal-doc ol {
+  padding-left: 1.25rem;
+}
+
+.legal-doc hr {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  margin: 24px 0;
+}
+
+.contact-card {
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 24px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contact-card h1 {
+  margin: 0 0 12px;
+  font-size: 1.35rem;
+  color: var(--heading);
+}
+
+.contact-card p {
+  margin: 0 0 16px;
+  line-height: 1.55;
+  color: var(--body);
+}
+
+.contact-email {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+/* Download redirect */
+.download-center {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.download-card {
+  max-width: 360px;
+  text-align: center;
+  padding: 32px 24px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.download-card h1 {
+  margin: 16px 0 0;
+  font-size: 1.1rem;
+  color: var(--heading);
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto;
+  border: 3px solid rgba(255, 255, 255, 0.15);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.85s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.btn-primary {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 12px 24px;
+  border-radius: 10px;
+  background: var(--accent);
+  color: #0b0e13;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  filter: brightness(1.05);
+  text-decoration: none;
+}
+
+/* 404 */
+.error-code {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--heading);
+  margin: 0 0 8px;
+}
