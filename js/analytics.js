@@ -13,4 +13,25 @@
   window.gtag = gtag;
   gtag("js", new Date());
   gtag("config", MEASUREMENT_ID);
+
+  document.addEventListener(
+    "click",
+    function (ev) {
+      var t = ev.target;
+      if (!t || typeof t.closest !== "function") return;
+      var a = t.closest("a[href]");
+      if (!a) return;
+      var href = a.getAttribute("href") || "";
+      if (href.indexOf("play.google.com") !== -1) {
+        gtag("event", "play_store_cta_click", {
+          link_url: href,
+        });
+      } else if (href.indexOf("apps.apple.com") !== -1 || href.indexOf("itunes.apple.com") !== -1) {
+        gtag("event", "app_store_cta_click", {
+          link_url: href,
+        });
+      }
+    },
+    true
+  );
 })();
