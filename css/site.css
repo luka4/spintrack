@@ -401,6 +401,174 @@ main {
   color: var(--muted);
 }
 
+/* Landing screenshots section (no overlay background) */
+.screenshots-section {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 46px 16px;
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.screenshots-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* Same background as the whole page, but rendered ABOVE the global scrim. */
+  background-image: url("/assets/bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  z-index: 0;
+}
+
+.screenshots-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.shots-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: 1px solid rgba(11, 14, 19, 0.18);
+  background: rgba(255, 255, 255, 0.88);
+  color: #0b0e13;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.shots-btn:hover {
+  background: rgba(255, 255, 255, 0.96);
+}
+
+.shots-btn:active {
+  transform: translateY(1px);
+}
+
+.shots-btn:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.shots-viewport {
+  --gap: 16px;
+  --per-view: 3;
+  position: relative;
+  overflow: hidden;
+}
+
+.shots-viewport .shots-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+}
+
+.shots-viewport .shots-prev {
+  left: 6px;
+}
+
+.shots-viewport .shots-next {
+  right: 6px;
+}
+
+.shots-track {
+  display: flex;
+  gap: var(--gap);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.shots-track::-webkit-scrollbar {
+  display: none;
+}
+
+.shot-item {
+  flex: 0 0 calc((100% - (var(--gap) * (var(--per-view) - 1))) / var(--per-view));
+  scroll-snap-align: start;
+}
+
+.shot-card {
+  display: block;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.22);
+  border: 1px solid rgba(11, 14, 19, 0.14);
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(8px);
+  text-decoration: none;
+}
+
+.shot-card:hover {
+  text-decoration: none;
+  filter: brightness(1.02);
+}
+
+.shot-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  /* Crop amount is computed in JS so the caption can occupy that exact space */
+  -webkit-clip-path: inset(0 0 var(--shot-crop-px, 0px) 0);
+  clip-path: inset(0 0 var(--shot-crop-px, 0px) 0);
+}
+
+.shot-caption {
+  margin-top: calc(-1 * var(--shot-crop-px, 0px));
+  padding: 10px 14px 12px;
+  background: rgba(255, 255, 255, 0.92);
+  color: #0b0e13;
+  text-align: center;
+}
+
+.shot-head {
+  margin: 0 0 6px;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+}
+
+.shot-desc {
+  margin: 0;
+  font-size: 12.5px;
+  line-height: 1.35;
+  color: rgba(11, 14, 19, 0.72);
+}
+
+@media (max-width: 720px) {
+  .shots-viewport {
+    --gap: 12px;
+    --per-view: 2;
+  }
+
+  .screenshots-section {
+    padding-top: 38px;
+    padding-bottom: 38px;
+  }
+
+  .screenshots-section::before {
+    /* iOS/Android often ignore fixed attachment; keep it stable/fast. */
+    background-attachment: scroll;
+  }
+}
+
 /* Legal & contact inner pages */
 .legal-header {
   margin-bottom: 20px;
