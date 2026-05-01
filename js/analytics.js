@@ -230,7 +230,40 @@
     ],
   };
 
-  function ensureScreenshotsSection() {
+  function resolveShotsForPage() {
+    var lang = getPageLang();
+    return SHOTS_I18N[lang] || SHOTS_I18N[lang.split("-")[0]] || SHOTS_I18N.en;
+  }
+
+  function ensureShotsModal() {
+    var existing = document.getElementById("shots-modal");
+    if (existing) return existing;
+
+    var modal = document.createElement("div");
+    modal.id = "shots-modal";
+    modal.className = "shots-modal";
+    modal.setAttribute("aria-hidden", "true");
+    modal.hidden = true;
+    modal.innerHTML =
+      '<div class="shots-modal-backdrop" data-shots-close="1"></div>' +
+      '<div class="shots-modal-panel" role="dialog" aria-modal="true" aria-label="Screenshot viewer">' +
+      '  <button class="shots-modal-close" type="button" aria-label="Close" data-shots-close="1">&#x2715;</button>' +
+      '  <button class="shots-modal-nav shots-modal-prev" type="button" aria-label="Previous screenshot">&#x2039;</button>' +
+      '  <button class="shots-modal-nav shots-modal-next" type="button" aria-label="Next screenshot">&#x203A;</button>' +
+      '  <div class="shots-modal-body">' +
+      '    <img class="shots-modal-img" alt="" decoding="async" />' +
+      '    <div class="shots-modal-caption">' +
+      '      <h3 class="shots-modal-head"></h3>' +
+      '      <p class="shots-modal-desc"></p>' +
+      "    </div>" +
+      "  </div>" +
+      "</div>";
+
+    document.body.appendChild(modal);
+    return modal;
+  }
+
+  function ensureScreenshotsSection(shots) {
     if (!isLandingPage()) return null;
 
     var existing = document.getElementById("screenshots");
@@ -244,45 +277,42 @@
     section.id = "screenshots";
     section.setAttribute("aria-label", "App screenshots");
 
-    var lang = getPageLang();
-    var shots = SHOTS_I18N[lang] || SHOTS_I18N[lang.split("-")[0]] || SHOTS_I18N.en;
-
     section.innerHTML =
       '<div class="screenshots-inner">' +
       '  <div class="shots-viewport">' +
       '    <button class="shots-btn shots-prev" type="button" aria-label="Previous screenshots">&#x2039;</button>' +
       '    <button class="shots-btn shots-next" type="button" aria-label="Next screenshots">&#x203A;</button>' +
       '    <ul class="shots-track" aria-label="Screenshot slider">' +
-      '      <li class="shot-item"><a class="shot-card" href="/assets/image1.jpg" target="_blank" rel="noopener noreferrer"><img class="shot-img" src="/assets/image1.jpg" alt="App screenshot 1" loading="lazy" decoding="async" /><div class="shot-caption"><h3 class="shot-head">' +
+      '      <li class="shot-item"><button class="shot-card" type="button" data-shot-index="0"><img class="shot-img" src="/assets/image1.jpg" alt="App screenshot 1" loading="lazy" decoding="async" /><div class="shot-caption"><h3 class="shot-head">' +
       escapeHtml(shots[0].h) +
       '</h3><p class="shot-desc">' +
       escapeHtml(shots[0].d) +
-      "</p></div></a></li>" +
-      '      <li class="shot-item"><a class="shot-card" href="/assets/image2.jpg" target="_blank" rel="noopener noreferrer"><img class="shot-img" src="/assets/image2.jpg" alt="App screenshot 2" loading="lazy" decoding="async" /><div class="shot-caption"><h3 class="shot-head">' +
+      "</p></div></button></li>" +
+      '      <li class="shot-item"><button class="shot-card" type="button" data-shot-index="1"><img class="shot-img" src="/assets/image2.jpg" alt="App screenshot 2" loading="lazy" decoding="async" /><div class="shot-caption"><h3 class="shot-head">' +
       escapeHtml(shots[1].h) +
       '</h3><p class="shot-desc">' +
       escapeHtml(shots[1].d) +
-      "</p></div></a></li>" +
-      '      <li class="shot-item"><a class="shot-card" href="/assets/image3.jpg" target="_blank" rel="noopener noreferrer"><img class="shot-img" src="/assets/image3.jpg" alt="App screenshot 3" loading="lazy" decoding="async" /><div class="shot-caption"><h3 class="shot-head">' +
+      "</p></div></button></li>" +
+      '      <li class="shot-item"><button class="shot-card" type="button" data-shot-index="2"><img class="shot-img" src="/assets/image3.jpg" alt="App screenshot 3" loading="lazy" decoding="async" /><div class="shot-caption"><h3 class="shot-head">' +
       escapeHtml(shots[2].h) +
       '</h3><p class="shot-desc">' +
       escapeHtml(shots[2].d) +
-      "</p></div></a></li>" +
-      '      <li class="shot-item"><a class="shot-card" href="/assets/image4.jpg" target="_blank" rel="noopener noreferrer"><img class="shot-img" src="/assets/image4.jpg" alt="App screenshot 4" loading="lazy" decoding="async" /><div class="shot-caption"><h3 class="shot-head">' +
+      "</p></div></button></li>" +
+      '      <li class="shot-item"><button class="shot-card" type="button" data-shot-index="3"><img class="shot-img" src="/assets/image4.jpg" alt="App screenshot 4" loading="lazy" decoding="async" /><div class="shot-caption"><h3 class="shot-head">' +
       escapeHtml(shots[3].h) +
       '</h3><p class="shot-desc">' +
       escapeHtml(shots[3].d) +
-      "</p></div></a></li>" +
-      '      <li class="shot-item"><a class="shot-card" href="/assets/image5.jpg" target="_blank" rel="noopener noreferrer"><img class="shot-img" src="/assets/image5.jpg" alt="App screenshot 5" loading="lazy" decoding="async" /><div class="shot-caption"><h3 class="shot-head">' +
+      "</p></div></button></li>" +
+      '      <li class="shot-item"><button class="shot-card" type="button" data-shot-index="4"><img class="shot-img" src="/assets/image5.jpg" alt="App screenshot 5" loading="lazy" decoding="async" /><div class="shot-caption"><h3 class="shot-head">' +
       escapeHtml(shots[4].h) +
       '</h3><p class="shot-desc">' +
       escapeHtml(shots[4].d) +
-      "</p></div></a></li>" +
-      '      <li class="shot-item"><a class="shot-card" href="/assets/image6.jpg" target="_blank" rel="noopener noreferrer"><img class="shot-img" src="/assets/image6.jpg" alt="App screenshot 6" loading="lazy" decoding="async" /><div class="shot-caption"><h3 class="shot-head">' +
+      "</p></div></button></li>" +
+      '      <li class="shot-item"><button class="shot-card" type="button" data-shot-index="5"><img class="shot-img" src="/assets/image6.jpg" alt="App screenshot 6" loading="lazy" decoding="async" /><div class="shot-caption"><h3 class="shot-head">' +
       escapeHtml(shots[5].h) +
       '</h3><p class="shot-desc">' +
       escapeHtml(shots[5].d) +
-      "</p></div></a></li>" +
+      "</p></div></button></li>" +
       "    </ul>" +
       "  </div>" +
       "</div>";
@@ -291,13 +321,120 @@
     return section;
   }
 
-  function initShotsSlider(section) {
+  function initShotsSlider(section, shots) {
     if (!section) return;
 
     var track = section.querySelector(".shots-track");
     var prevBtn = section.querySelector(".shots-prev");
     var nextBtn = section.querySelector(".shots-next");
     if (!track || !prevBtn || !nextBtn) return;
+
+    function viewerEnabled() {
+      // Mobile-only: on desktop the in-page viewer must not open.
+      return window.matchMedia && window.matchMedia("(max-width: 720px)").matches;
+    }
+
+    var modal = ensureShotsModal();
+    var modalImg = modal.querySelector(".shots-modal-img");
+    var modalHead = modal.querySelector(".shots-modal-head");
+    var modalDesc = modal.querySelector(".shots-modal-desc");
+    var modalPrev = modal.querySelector(".shots-modal-prev");
+    var modalNext = modal.querySelector(".shots-modal-next");
+    var modalPanel = modal.querySelector(".shots-modal-panel");
+
+    var modalOpen = false;
+    var modalIndex = 0;
+
+    function shotSrcByIndex(i) {
+      return "/assets/image" + (i + 1) + ".jpg";
+    }
+
+    function setModalIndex(nextIndex) {
+      var total = shots.length;
+      var idx = ((nextIndex % total) + total) % total;
+      modalIndex = idx;
+      modalImg.src = shotSrcByIndex(idx);
+      modalImg.alt = "App screenshot " + (idx + 1);
+      modalHead.textContent = shots[idx].h || "";
+      modalDesc.textContent = shots[idx].d || "";
+    }
+
+    function openModalAt(index, pushHistory) {
+      if (!viewerEnabled()) return;
+      if (!modal) return;
+      if (!modalOpen) {
+        modal.hidden = false;
+        modal.setAttribute("aria-hidden", "false");
+        document.body.classList.add("shots-modal-open");
+        modalOpen = true;
+      }
+      setModalIndex(index);
+
+      if (pushHistory) {
+        try {
+          history.pushState({ shotsModal: true }, "", "#shot-" + (index + 1));
+        } catch (e) {
+          // ignore
+        }
+      }
+
+      // Focus inside dialog for accessibility
+      if (modalPanel && typeof modalPanel.focus === "function") modalPanel.focus();
+    }
+
+    function closeModal(viaHistoryBack) {
+      if (!modalOpen) return;
+      modalOpen = false;
+      modal.hidden = true;
+      modal.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("shots-modal-open");
+      modalImg.removeAttribute("src");
+
+      if (!viaHistoryBack) {
+        // Prefer browser back so URL/state is restored.
+        try {
+          if (history.state && history.state.shotsModal) history.back();
+        } catch (e) {
+          // ignore
+        }
+      }
+    }
+
+    modal.addEventListener("click", function (ev) {
+      var t = ev.target;
+      if (!t) return;
+      if (t && t.getAttribute && t.getAttribute("data-shots-close") === "1") {
+        closeModal(false);
+      }
+    });
+    modalPrev.addEventListener("click", function () {
+      openModalAt(modalIndex - 1, true);
+    });
+    modalNext.addEventListener("click", function () {
+      openModalAt(modalIndex + 1, true);
+    });
+
+    window.addEventListener("popstate", function () {
+      if (modalOpen) closeModal(true);
+    });
+
+    window.addEventListener("keydown", function (ev) {
+      if (!modalOpen) return;
+      if (ev.key === "Escape") closeModal(false);
+      else if (ev.key === "ArrowLeft") openModalAt(modalIndex - 1, true);
+      else if (ev.key === "ArrowRight") openModalAt(modalIndex + 1, true);
+    });
+
+    track.addEventListener("click", function (ev) {
+      if (!viewerEnabled()) return;
+      var t = ev.target;
+      if (!t || typeof t.closest !== "function") return;
+      var btn = t.closest("button[data-shot-index]");
+      if (!btn) return;
+      var idx = parseInt(btn.getAttribute("data-shot-index") || "0", 10);
+      if (isNaN(idx)) idx = 0;
+      openModalAt(idx, true);
+    });
 
     function updateCropVars() {
       var imgs = track.querySelectorAll("img.shot-img");
@@ -366,6 +503,7 @@
       function () {
         updateButtons();
         updateCropVars();
+        if (!viewerEnabled() && modalOpen) closeModal(true);
       },
       { passive: true }
     );
@@ -394,8 +532,9 @@
   }
 
   function bootScreenshots() {
-    var section = ensureScreenshotsSection();
-    initShotsSlider(section);
+    var shots = resolveShotsForPage();
+    var section = ensureScreenshotsSection(shots);
+    initShotsSlider(section, shots);
   }
 
   if (document.readyState === "loading") {
