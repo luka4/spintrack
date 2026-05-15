@@ -109,6 +109,19 @@ a:hover {
   padding: 0 clamp(56px, 22vw, 120px);
 }
 
+a.brand-block {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+a.brand-block:hover .brand-title,
+a.brand-block:focus-visible .brand-title {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 /* WebTopBar `marketingBrandHero` */
 .brand-title {
   margin: 0;
