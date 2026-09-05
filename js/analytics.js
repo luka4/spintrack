@@ -1,39 +1,287 @@
-/* Google tag (gtag.js) — measurement ID only maintained here */
+/* Google tag (gtag.js) — measurement ID only maintained here.
+   Analytics only loads after the visitor accepts the cookie banner. */
 (function () {
   var MEASUREMENT_ID = "G-FZKNNS3RLX";
-  var s = document.createElement("script");
-  s.async = true;
-  s.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(MEASUREMENT_ID);
-  document.head.appendChild(s);
+  var CONSENT_KEY = "sb-cookie-consent";
+  var CONSENT_GRANTED = "granted";
+  var CONSENT_DENIED = "denied";
 
-  window.dataLayer = window.dataLayer || [];
-  function gtag() {
-    window.dataLayer.push(arguments);
+  function readConsent() {
+    try {
+      return window.localStorage.getItem(CONSENT_KEY);
+    } catch (e) {
+      return null;
+    }
   }
-  window.gtag = gtag;
-  gtag("js", new Date());
-  gtag("config", MEASUREMENT_ID);
 
-  document.addEventListener(
-    "click",
-    function (ev) {
-      var t = ev.target;
-      if (!t || typeof t.closest !== "function") return;
-      var a = t.closest("a[href]");
-      if (!a) return;
-      var href = a.getAttribute("href") || "";
-      if (href.indexOf("play.google.com") !== -1) {
-        gtag("event", "play_store_cta_click", {
-          link_url: href,
-        });
-      } else if (href.indexOf("apps.apple.com") !== -1 || href.indexOf("itunes.apple.com") !== -1) {
-        gtag("event", "app_store_cta_click", {
-          link_url: href,
-        });
-      }
+  function writeConsent(value) {
+    try {
+      window.localStorage.setItem(CONSENT_KEY, value);
+    } catch (e) {
+      // Storage blocked — consent lasts for this page view only.
+    }
+  }
+
+  var analyticsStarted = false;
+
+  function startAnalytics() {
+    if (analyticsStarted) return;
+    analyticsStarted = true;
+
+    var s = document.createElement("script");
+    s.async = true;
+    s.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(MEASUREMENT_ID);
+    document.head.appendChild(s);
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      window.dataLayer.push(arguments);
+    }
+    window.gtag = gtag;
+    gtag("js", new Date());
+    gtag("config", MEASUREMENT_ID);
+
+    document.addEventListener(
+      "click",
+      function (ev) {
+        var t = ev.target;
+        if (!t || typeof t.closest !== "function") return;
+        var a = t.closest("a[href]");
+        if (!a) return;
+        var href = a.getAttribute("href") || "";
+        if (href.indexOf("play.google.com") !== -1) {
+          gtag("event", "play_store_cta_click", {
+            link_url: href,
+          });
+        } else if (href.indexOf("apps.apple.com") !== -1 || href.indexOf("itunes.apple.com") !== -1) {
+          gtag("event", "app_store_cta_click", {
+            link_url: href,
+          });
+        }
+      },
+      true
+    );
+  }
+
+  // 19 supported languages, same set as SHOTS_I18N below.
+  var COOKIE_I18N = {
+    en: {
+      label: "Cookie notice",
+      text: "We use analytics cookies to measure visits and improve the site. They only load if you accept.",
+      accept: "Accept",
+      decline: "Decline",
+      privacy: "Privacy Policy",
     },
-    true
-  );
+    de: {
+      label: "Cookie-Hinweis",
+      text: "Wir verwenden Analyse-Cookies, um Besuche zu messen und die Website zu verbessern. Sie werden nur geladen, wenn du zustimmst.",
+      accept: "Akzeptieren",
+      decline: "Ablehnen",
+      privacy: "Datenschutz",
+    },
+    fr: {
+      label: "Avis relatif aux cookies",
+      text: "Nous utilisons des cookies de mesure d’audience pour améliorer le site. Ils ne sont chargés que si vous les acceptez.",
+      accept: "Accepter",
+      decline: "Refuser",
+      privacy: "Confidentialité",
+    },
+    es: {
+      label: "Aviso de cookies",
+      text: "Usamos cookies analíticas para medir las visitas y mejorar el sitio. Solo se cargan si las aceptas.",
+      accept: "Aceptar",
+      decline: "Rechazar",
+      privacy: "Privacidad",
+    },
+    pt: {
+      label: "Aviso de cookies",
+      text: "Usamos cookies de análise para medir visitas e melhorar o site. Eles só são carregados se você aceitar.",
+      accept: "Aceitar",
+      decline: "Recusar",
+      privacy: "Privacidade",
+    },
+    sv: {
+      label: "Cookie-meddelande",
+      text: "Vi använder analyscookies för att mäta besök och förbättra webbplatsen. De laddas bara om du accepterar.",
+      accept: "Acceptera",
+      decline: "Neka",
+      privacy: "Integritetspolicy",
+    },
+    da: {
+      label: "Cookiemeddelelse",
+      text: "Vi bruger analysecookies til at måle besøg og forbedre siden. De indlæses kun, hvis du accepterer.",
+      accept: "Accepter",
+      decline: "Afvis",
+      privacy: "Privatlivspolitik",
+    },
+    "zh-hans": {
+      label: "Cookie 提示",
+      text: "我们使用分析 Cookie 来统计访问量并改进网站。只有在你同意后才会加载。",
+      accept: "接受",
+      decline: "拒绝",
+      privacy: "隐私政策",
+    },
+    ja: {
+      label: "Cookie に関するお知らせ",
+      text: "アクセス数の計測とサイト改善のために分析 Cookie を使用します。同意した場合にのみ読み込まれます。",
+      accept: "同意する",
+      decline: "拒否する",
+      privacy: "プライバシーポリシー",
+    },
+    ko: {
+      label: "쿠키 알림",
+      text: "방문 수를 측정하고 사이트를 개선하기 위해 분석 쿠키를 사용합니다. 동의하신 경우에만 로드됩니다.",
+      accept: "동의",
+      decline: "거부",
+      privacy: "개인정보 처리방침",
+    },
+    hi: {
+      label: "कुकी सूचना",
+      text: "हम विज़िट मापने और साइट बेहतर बनाने के लिए एनालिटिक्स कुकीज़ का उपयोग करते हैं। ये तभी लोड होती हैं जब आप स्वीकार करें।",
+      accept: "स्वीकारें",
+      decline: "अस्वीकारें",
+      privacy: "गोपनीयता नीति",
+    },
+    uk: {
+      label: "Повідомлення про файли cookie",
+      text: "Ми використовуємо аналітичні файли cookie, щоб вимірювати відвідування та покращувати сайт. Вони завантажуються лише за вашої згоди.",
+      accept: "Прийняти",
+      decline: "Відхилити",
+      privacy: "Політика конфіденційності",
+    },
+    pl: {
+      label: "Informacja o plikach cookie",
+      text: "Używamy analitycznych plików cookie, aby mierzyć odwiedziny i ulepszać stronę. Ładują się tylko wtedy, gdy je zaakceptujesz.",
+      accept: "Akceptuję",
+      decline: "Odrzuć",
+      privacy: "Prywatność",
+    },
+    cs: {
+      label: "Oznámení o souborech cookie",
+      text: "Používáme analytické soubory cookie k měření návštěvnosti a zlepšování webu. Načtou se, jen když je přijmete.",
+      accept: "Přijmout",
+      decline: "Odmítnout",
+      privacy: "Ochrana soukromí",
+    },
+    sk: {
+      label: "Oznámenie o súboroch cookie",
+      text: "Používame analytické súbory cookie na meranie návštevnosti a zlepšovanie webu. Načítajú sa, len keď ich prijmete.",
+      accept: "Prijať",
+      decline: "Odmietnuť",
+      privacy: "Ochrana súkromia",
+    },
+    ru: {
+      label: "Уведомление о файлах cookie",
+      text: "Мы используем аналитические файлы cookie, чтобы измерять посещения и улучшать сайт. Они загружаются только с вашего согласия.",
+      accept: "Принять",
+      decline: "Отклонить",
+      privacy: "Политика конфиденциальности",
+    },
+    it: {
+      label: "Avviso sui cookie",
+      text: "Usiamo cookie analitici per misurare le visite e migliorare il sito. Vengono caricati solo se li accetti.",
+      accept: "Accetta",
+      decline: "Rifiuta",
+      privacy: "Privacy",
+    },
+    ro: {
+      label: "Notificare privind cookie-urile",
+      text: "Folosim cookie-uri de analiză pentru a măsura vizitele și a îmbunătăți site-ul. Se încarcă doar dacă le accepți.",
+      accept: "Accept",
+      decline: "Refuz",
+      privacy: "Confidențialitate",
+    },
+    hu: {
+      label: "Süti tájékoztató",
+      text: "Analitikai sütiket használunk a látogatások méréséhez és az oldal fejlesztéséhez. Csak akkor töltődnek be, ha elfogadod.",
+      accept: "Elfogadom",
+      decline: "Elutasítom",
+      privacy: "Adatvédelem",
+    },
+  };
+
+  function resolveCookieCopy() {
+    var lang = getPageLang();
+    return COOKIE_I18N[lang] || COOKIE_I18N[lang.split("-")[0]] || COOKIE_I18N.en;
+  }
+
+  function resolvePrivacyHref() {
+    // The footer already carries the localized privacy URL for this page.
+    var link = document.querySelector('.footer-links a[href*="privacy"]');
+    return (link && link.getAttribute("href")) || "/privacy.html";
+  }
+
+  function showCookieBanner() {
+    if (!document.body) return;
+    if (document.getElementById("cookie-banner")) return;
+
+    var copy = resolveCookieCopy();
+
+    var banner = document.createElement("div");
+    banner.id = "cookie-banner";
+    banner.className = "cookie-banner";
+    banner.setAttribute("role", "region");
+    banner.setAttribute("aria-label", copy.label);
+
+    var inner = document.createElement("div");
+    inner.className = "cookie-banner-inner";
+
+    var text = document.createElement("p");
+    text.className = "cookie-banner-text";
+    text.appendChild(document.createTextNode(copy.text + " "));
+
+    var privacyLink = document.createElement("a");
+    privacyLink.className = "cookie-banner-link";
+    privacyLink.href = resolvePrivacyHref();
+    privacyLink.textContent = copy.privacy;
+    text.appendChild(privacyLink);
+
+    var actions = document.createElement("div");
+    actions.className = "cookie-banner-actions";
+
+    var declineBtn = document.createElement("button");
+    declineBtn.type = "button";
+    declineBtn.className = "cookie-btn cookie-btn-decline";
+    declineBtn.textContent = copy.decline;
+
+    var acceptBtn = document.createElement("button");
+    acceptBtn.type = "button";
+    acceptBtn.className = "cookie-btn cookie-btn-accept";
+    acceptBtn.textContent = copy.accept;
+
+    function dismiss() {
+      if (banner.parentNode) banner.parentNode.removeChild(banner);
+    }
+
+    declineBtn.addEventListener("click", function () {
+      writeConsent(CONSENT_DENIED);
+      dismiss();
+    });
+
+    acceptBtn.addEventListener("click", function () {
+      writeConsent(CONSENT_GRANTED);
+      dismiss();
+      startAnalytics();
+    });
+
+    actions.appendChild(declineBtn);
+    actions.appendChild(acceptBtn);
+    inner.appendChild(text);
+    inner.appendChild(actions);
+    banner.appendChild(inner);
+    document.body.appendChild(banner);
+  }
+
+  function bootCookieConsent() {
+    var consent = readConsent();
+    if (consent === CONSENT_GRANTED) {
+      startAnalytics();
+      return;
+    }
+    if (consent === CONSENT_DENIED) return;
+    showCookieBanner();
+  }
+
 
   function isLandingPage() {
     // Landing pages have the hero block with store badges.
@@ -537,9 +785,14 @@
     initShotsSlider(section, shots);
   }
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", bootScreenshots);
-  } else {
+  function boot() {
+    bootCookieConsent();
     bootScreenshots();
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", boot);
+  } else {
+    boot();
   }
 })();
