@@ -7,8 +7,10 @@ Plain **HTML + CSS** (and a small inline **JS** block only on `download.html` fo
 
 Edit files directly. Store links, copy, legal text, meta tags, and QR target URL are all **hardcoded** in the HTML. Shared layout/styling lives in `css/site.css`.
 
-Home pages use the **official** store images: Google’s `en_badge_web_generic.png` from `play.google.com` and Apple’s black **Download on the App Store** badge from `tools.applemediaservices.com` (English). To localize badges per language, swap the `src` URLs in each `index.html` to match [Google Play badge guidelines](https://play.google.com/intl/en_us/badges/) and Apple’s App Store marketing resources.
+Home pages use the **official** store images, **self-hosted** in `assets/`: `badge-google-play.png` (Google’s `en_badge_web_generic.png`) and `badge-app-store.svg` (Apple’s black **Download on the App Store** badge, English). Both are unmodified artwork — the Apple SVG only has its root `width`/`height` scaled, with the `viewBox` untouched. To localize badges per language, download the localized artwork from [Google Play badge guidelines](https://play.google.com/intl/en_us/badges/) and Apple’s App Store marketing resources into `assets/` and swap the `src` in each `index.html`.
 
-Language menu flags are **24×18 PNGs** from [flagcdn.com](https://flagcdn.com) (same mapping as `src/utils/languageFlagCdn.js` in the app), so they show correctly on Linux/WSL where Unicode flag emoji often do not.
+Language menu flags are **24×18 PNGs** in `assets/flags/`, originally from [flagcdn.com](https://flagcdn.com) (same mapping as `src/utils/languageFlagCdn.js` in the app), so they show correctly on Linux/WSL where Unicode flag emoji often do not.
+
+**No page loads anything from a third-party origin.** Badges, flags, CSS and JS are all same-origin, so no visitor data reaches Google, Apple or a CDN before consent. Keep it that way — if you add a remote font, badge or script, it fires before the cookie banner is answered. The only external request is Google Analytics, loaded by `js/analytics.js` **only after** the visitor accepts the cookie banner (see `cookie-settings.html` for the per-language settings page).
 
 When you split this into its own repository, copy the whole `getspinbook/` tree as-is.
