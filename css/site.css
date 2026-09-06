@@ -338,13 +338,21 @@ main {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  flex: 1 1 0;
+  /* flex-grow and max-width track each badge's artwork aspect ratio (Play
+     564x168 = 3.357, App Store 119.66x40 = 2.992) so the two always scale to
+     the same height, whether the row is height- or width-constrained. */
+  flex: 3357 1 0;
   min-width: 0;
   width: 0;
-  max-width: min(190px, 48%);
+  max-width: min(200px, 50%);
   height: var(--store-badge-box-h);
   text-decoration: none;
   line-height: 0;
+}
+
+.store-row .store-badge-link:last-child {
+  flex-grow: 2992;
+  max-width: min(178px, 44.5%);
 }
 
 .store-badge-link:hover {
