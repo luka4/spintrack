@@ -422,34 +422,19 @@ main {
   color: var(--muted);
 }
 
-/* Landing screenshots section (no overlay background) */
+/* Landing screenshots section — no background of its own: the page's bg-layer
+   (and its scrim) shows through here exactly as it does above. */
 .screenshots-section {
   width: 100%;
   max-width: none;
   margin: 0;
   padding: 46px 16px;
   position: relative;
-  overflow: hidden;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-.screenshots-section::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  /* Same background as the whole page, but rendered ABOVE the global scrim. */
-  background-image: url("/assets/bg.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  z-index: 0;
+  /* The only divider: a rule where the screenshots start. Same line as the header. */
+  border-top: 1px solid var(--bar-border);
 }
 
 .screenshots-inner {
-  position: relative;
-  z-index: 1;
   max-width: 980px;
   margin: 0 auto;
 }
@@ -660,11 +645,6 @@ body.shots-modal-open {
   .screenshots-section {
     padding-top: 38px;
     padding-bottom: 38px;
-  }
-
-  .screenshots-section::before {
-    /* iOS/Android often ignore fixed attachment; keep it stable/fast. */
-    background-attachment: scroll;
   }
 }
 
