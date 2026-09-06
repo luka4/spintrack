@@ -165,7 +165,6 @@ a.brand-block:focus-visible .brand-title {
   object-fit: cover;
   border-radius: 2px;
   vertical-align: middle;
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12);
 }
 
 .lang-picker {
@@ -233,6 +232,19 @@ a.brand-block:focus-visible .brand-title {
 .lang-menu a[aria-current="page"] {
   background: rgba(46, 204, 113, 0.15);
   color: var(--accent);
+}
+
+@media (max-width: 720px) {
+  /* Closed: the flag alone. Open: flag + language name, as on desktop.
+     The min-height keeps the flag-only pill a comfortable tap target (48x40)
+     and stops the control changing height when it opens. */
+  .lang-picker > summary {
+    min-height: 40px;
+  }
+
+  .lang-picker:not([open]) > summary .lang-name {
+    display: none;
+  }
 }
 
 main {
