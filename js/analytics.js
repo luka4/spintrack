@@ -156,7 +156,7 @@
     },
     ja: {
       label: "Cookie に関するお知らせ",
-      text: "このサイトでは、アクセス数の計測に分析 Cookie を使用したいと考えています。",
+      text: "アクセス解析のため、当サイトで分析用 Cookie を使用してもよろしいですか？",
       accept: "同意する",
       decline: "拒否する",
       privacy: "プライバシーポリシー",
@@ -171,8 +171,8 @@
     hi: {
       label: "कुकी सूचना",
       text: "यह वेबसाइट विज़िट मापने के लिए एनालिटिक्स कुकीज़ का उपयोग करना चाहती है।",
-      accept: "स्वीकारें",
-      decline: "अस्वीकारें",
+      accept: "स्वीकार करें",
+      decline: "अस्वीकार करें",
       privacy: "गोपनीयता नीति",
     },
     uk: {
@@ -225,7 +225,7 @@
       privacy: "Confidențialitate",
     },
     hu: {
-      label: "Süti tájékoztató",
+      label: "Sütitájékoztató",
       text: "Ez a webhely analitikai sütiket szeretne használni a látogatások méréséhez.",
       accept: "Elfogadom",
       decline: "Elutasítom",
