@@ -17,7 +17,7 @@ Below the slider, each `index.html` has a static **features section** (`#feature
 
 `rubber-lifespan.html` in every language is a guide article ("How often should you replace table tennis rubbers?"). Its hours per level (130/100/90/80) and the pips/anti multipliers (≈1.8×/2.5×, rounded to ranges in the text) mirror the app's wear model in `src/utils/skillLevelHours.js` and `src/utils/lifespan.js` — if that model changes, update the article. The level names in its table are the app's `skillLevels` strings. Each language's FAQ links to it just above the store badges, and it opens with a "← Blog" link.
 
-`beat-your-opponents.html` in every language is a guide article ("Never forget how to beat an opponent: a table tennis memory strategy") on keeping notes about opponents. Its SpinBook section describes the app's public/private activity notes, the opponent's FH/BH rubber type in the activity form, and the player page (head-to-head record, notes from all shared activities, general note) — if those features change, update the article.
+`beat-your-opponents.html` in every language is a guide article ("Table tennis notes that win the rematch") on keeping notes about opponents. Its SpinBook section describes the app's public/private activity notes, the opponent's FH/BH rubber type in the activity form, and the player page (head-to-head record, notes from all shared activities, general note) — if those features change, update the article.
 
 **Footer** (every page except `404.html`): three columns — **Blog** (heading links to `blog.html`; then each article and the FAQ), **Support** (contact, account deletion) and **Legal** (privacy, cookie settings). The cookie banner takes its privacy link from the footer, so keep a `privacy.html` link there.
 

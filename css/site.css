@@ -859,6 +859,14 @@ body.shots-modal-open {
   margin: 0;
 }
 
+.guide-hero {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 0 20px;
+  border-radius: 12px;
+}
+
 .guide-doc strong {
   color: var(--heading);
 }
