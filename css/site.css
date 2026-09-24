@@ -400,10 +400,13 @@ main {
   }
 }
 
+/* Same bar as the header (background + green hairline), mirrored at the bottom. */
 .site-footer {
   margin-top: auto;
-  padding: 24px 16px max(env(safe-area-inset-bottom), 24px);
+  padding: 28px 16px max(env(safe-area-inset-bottom), 24px);
   text-align: center;
+  background: var(--bar-bg);
+  border-top: 1px solid var(--bar-border);
 }
 
 /* Footer: Blog / Support / Legal columns; stacked and centered on phones. */
@@ -699,7 +702,7 @@ body.shots-modal-open {
 /* Landing features — static HTML below the screenshot slider; same divider as the slider. */
 .features-section {
   width: 100%;
-  padding: 46px 16px 12px;
+  padding: 46px 16px;
   border-top: 1px solid var(--bar-border);
 }
 
@@ -772,6 +775,7 @@ body.shots-modal-open {
 @media (max-width: 520px) {
   .features-section {
     padding-top: 38px;
+    padding-bottom: 38px;
   }
 
   .features-grid {
