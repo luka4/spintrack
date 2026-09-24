@@ -488,7 +488,9 @@
       "  </div>" +
       "</div>";
 
-    footer.parentNode.insertBefore(section, footer);
+    // Sits above the static features section when the page has one.
+    var anchor = document.getElementById("features") || footer;
+    anchor.parentNode.insertBefore(section, anchor);
     return section;
   }
 

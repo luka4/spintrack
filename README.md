@@ -11,6 +11,10 @@ Home pages use the **official** store images, **self-hosted** in `assets/`: `bad
 
 The landing-page screenshot slider (injected by `js/analytics.js`, styled in `css/site.css`) uses the **localized App Store screenshots** from `store/apple/screenshot/<App Store locale>/APP_IPHONE_65/`, downscaled to 900px-wide WebP and stored per site language in `assets/screenshots/<lang>/1.webp` … `8.webp` (8 shots, in App Store order). Those images already carry their own headline and subtitle, so the slider renders them **as-is** — no caption is drawn under a slide. `hi` has no localized store screenshots and falls back to `assets/screenshots/en/`. When the store screenshots are refreshed, regenerate these files at the same size and keep the numbering.
 
+Below the slider, each `index.html` has a static **features section** (`#features`, six cards with inline SVG icons). It is plain HTML so search engines index it; the slider inserts itself above it.
+
+`faq.html` in every language is the in-app **Settings → How it works** guide: the questions and answers are copied from `settings.howItWorksFaq` in `src/i18n/locales/<lang>.js`, in the order of `HOW_IT_WORKS_FAQ_IDS` in `src/screens/AppSettingsScreen.js`, plus a `FAQPage` JSON-LD block with the same text. When that app copy changes, update both the page and its JSON-LD. Every footer links to it first.
+
 The language menu uses **no flags**: each entry is the uppercase ISO 639-1 code plus the language's own name (`EN - English`, `UK - Українська`); the closed picker shows only the current code, with the full name as its `aria-label`.
 
 **No page loads anything from a third-party origin.** Badges, CSS and JS are all same-origin, so no visitor data reaches Google, Apple or a CDN before consent. Keep it that way — if you add a remote font, badge or script, it fires before the cookie banner is answered. The only external request is Google Analytics, loaded by `js/analytics.js` **only after** the visitor accepts the cookie banner (see `cookie-settings.html` for the per-language settings page).
