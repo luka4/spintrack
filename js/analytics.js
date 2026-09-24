@@ -674,9 +674,30 @@
     initShotsSlider(section, lang);
   }
 
+  // Language picker is a native <details>; close it on a tap/click outside it
+  // or on Escape. pointerdown (not click) so iOS Safari delivers taps on
+  // non-interactive areas to the document listener.
+  function bootLangPicker() {
+    document.addEventListener("pointerdown", function (ev) {
+      var open = document.querySelectorAll("details.lang-picker[open]");
+      for (var i = 0; i < open.length; i++) {
+        if (!open[i].contains(ev.target)) open[i].removeAttribute("open");
+      }
+    });
+    document.addEventListener("keydown", function (ev) {
+      if (ev.key !== "Escape") return;
+      var picker = document.querySelector("details.lang-picker[open]");
+      if (!picker) return;
+      picker.removeAttribute("open");
+      var summary = picker.querySelector("summary");
+      if (summary) summary.focus();
+    });
+  }
+
   function boot() {
     bootCookieConsent();
     bootScreenshots();
+    bootLangPicker();
   }
 
   if (document.readyState === "loading") {
