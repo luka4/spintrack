@@ -15,6 +15,10 @@ Below the slider, each `index.html` has a static **features section** (`#feature
 
 `faq.html` in every language is the in-app **Settings → How it works** guide: the questions and answers are copied from `settings.howItWorksFaq` in `src/i18n/locales/<lang>.js`, in the order of `HOW_IT_WORKS_FAQ_IDS` in `src/screens/AppSettingsScreen.js`, plus a `FAQPage` JSON-LD block with the same text. When that app copy changes, update both the page and its JSON-LD. Every footer links to it first.
 
+`rubber-lifespan.html` in every language is a guide article ("How often should you replace table tennis rubbers?"). Its hours per level (130/100/90/80) and the pips/anti multipliers (≈1.8×/2.5×, rounded to ranges in the text) mirror the app's wear model in `src/utils/skillLevelHours.js` and `src/utils/lifespan.js` — if that model changes, update the article. The level names in its table are the app's `skillLevels` strings. Each language's FAQ links to it just above the store badges.
+
+Any new page needs the full set of `<link rel="alternate" hreflang>` tags (all 19 languages plus `x-default`) in its `<head>`, matching every other language version of that page, and an entry in `sitemap.xml`.
+
 The language menu uses **no flags**: each entry is the uppercase ISO 639-1 code plus the language's own name (`EN - English`, `UK - Українська`); the closed picker shows only the current code, with the full name as its `aria-label`.
 
 **No page loads anything from a third-party origin.** Badges, CSS and JS are all same-origin, so no visitor data reaches Google, Apple or a CDN before consent. Keep it that way — if you add a remote font, badge or script, it fires before the cookie banner is answered. The only external request is Google Analytics, loaded by `js/analytics.js` **only after** the visitor accepts the cookie banner (see `cookie-settings.html` for the per-language settings page).
