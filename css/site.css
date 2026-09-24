@@ -922,6 +922,24 @@ body.shots-modal-open {
   border-radius: 14px;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+/* Article's hero image, edge to edge across the top of the card. */
+.blog-card-media {
+  display: block;
+  margin: -18px -20px 14px;
+}
+
+.blog-card-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: opacity 0.15s ease;
+}
+
+.blog-card-media:hover img {
+  opacity: 0.85;
 }
 
 .legal-doc .blog-card h2 {
