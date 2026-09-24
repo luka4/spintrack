@@ -798,6 +798,23 @@ body.shots-modal-open {
   margin: 0 0 10px;
 }
 
+/* Store badges closing the FAQ — the landing page's .store-row, outside .hero
+   so analytics.js does not treat the FAQ as a landing page. */
+.faq-cta {
+  margin-top: 36px;
+  padding-top: 28px;
+  border-top: 1px solid var(--bar-border);
+  text-align: center;
+}
+
+.legal-doc .faq-cta-title {
+  margin: 0 0 18px;
+  font-size: 1.2rem;
+  font-weight: 800;
+  line-height: 1.3;
+  color: var(--heading);
+}
+
 /* Legal & contact inner pages */
 .legal-header {
   margin-bottom: 20px;
