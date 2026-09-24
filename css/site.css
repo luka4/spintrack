@@ -406,24 +406,62 @@ main {
   text-align: center;
 }
 
-.footer-links {
-  margin-bottom: 10px;
+/* Footer: Blog / Support / Legal columns; stacked and centered on phones. */
+.footer-cols {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px 64px;
+  max-width: 980px;
+  margin: 0 auto 22px;
+  text-align: left;
   font-size: 0.88rem;
 }
 
-.footer-links a {
+.footer-col {
+  min-width: 150px;
+}
+
+.footer-heading {
+  margin: 0 0 8px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.footer-col ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-col li {
+  margin: 0 0 6px;
+}
+
+.footer-cols a {
   color: var(--label);
   text-decoration: none;
 }
 
-.footer-links a:hover {
+.footer-cols a:hover {
   text-decoration: underline;
   color: var(--heading);
 }
 
-.footer-sep {
+.footer-heading a {
   color: var(--muted);
-  margin: 0 4px;
+}
+
+@media (max-width: 520px) {
+  .footer-cols {
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    text-align: center;
+  }
 }
 
 .copyright {
@@ -851,6 +889,48 @@ body.shots-modal-open {
 .guide-table td:first-child {
   font-weight: 600;
   color: var(--heading);
+}
+
+/* Blog index (blog.html) — one card per article. */
+.blog-intro {
+  margin: 0 0 24px;
+}
+
+.blog-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.legal-doc .blog-card {
+  padding: 18px 20px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.legal-doc .blog-card h2 {
+  margin: 0 0 6px;
+  font-size: 1.08rem;
+  line-height: 1.35;
+}
+
+.blog-card h2 a {
+  color: var(--heading);
+  text-decoration: none;
+}
+
+.blog-card h2 a:hover {
+  color: var(--accent);
+}
+
+.legal-doc .blog-card p {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--muted);
 }
 
 /* Store badges closing the FAQ — the landing page's .store-row, outside .hero

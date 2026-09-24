@@ -13,9 +13,17 @@ The landing-page screenshot slider (injected by `js/analytics.js`, styled in `cs
 
 Below the slider, each `index.html` has a static **features section** (`#features`, six cards with inline SVG icons). It is plain HTML so search engines index it; the slider inserts itself above it.
 
-`faq.html` in every language is the in-app **Settings → How it works** guide: the questions and answers are copied from `settings.howItWorksFaq` in `src/i18n/locales/<lang>.js`, in the order of `HOW_IT_WORKS_FAQ_IDS` in `src/screens/AppSettingsScreen.js`, plus a `FAQPage` JSON-LD block with the same text. When that app copy changes, update both the page and its JSON-LD. Every footer links to it first.
+`faq.html` in every language is the in-app **Settings → How it works** guide: the questions and answers are copied from `settings.howItWorksFaq` in `src/i18n/locales/<lang>.js`, in the order of `HOW_IT_WORKS_FAQ_IDS` in `src/screens/AppSettingsScreen.js`, plus a `FAQPage` JSON-LD block with the same text. When that app copy changes, update both the page and its JSON-LD. The footer lists it in the Blog column.
 
-`rubber-lifespan.html` in every language is a guide article ("How often should you replace table tennis rubbers?"). Its hours per level (130/100/90/80) and the pips/anti multipliers (≈1.8×/2.5×, rounded to ranges in the text) mirror the app's wear model in `src/utils/skillLevelHours.js` and `src/utils/lifespan.js` — if that model changes, update the article. The level names in its table are the app's `skillLevels` strings. Each language's FAQ links to it just above the store badges.
+`rubber-lifespan.html` in every language is a guide article ("How often should you replace table tennis rubbers?"). Its hours per level (130/100/90/80) and the pips/anti multipliers (≈1.8×/2.5×, rounded to ranges in the text) mirror the app's wear model in `src/utils/skillLevelHours.js` and `src/utils/lifespan.js` — if that model changes, update the article. The level names in its table are the app's `skillLevels` strings. Each language's FAQ links to it just above the store badges, and it opens with a "← Blog" link.
+
+**Footer** (every page except `404.html`): three columns — **Blog** (heading links to `blog.html`; then each article and the FAQ), **Support** (contact, account deletion) and **Legal** (privacy, cookie settings). The cookie banner takes its privacy link from the footer, so keep a `privacy.html` link there.
+
+**Blog:** `blog.html` in every language lists the articles as cards, newest first, with `Blog` JSON-LD naming each post. To add an article, in all 19 languages:
+1. create `<slug>.html` (copy `rubber-lifespan.html`: `.guide-doc` article, "← Blog" back link, full hreflang group, `Article` JSON-LD, own title and description, store badges at the end);
+2. add a card to the top of `blog.html` and a `BlogPosting` entry to its JSON-LD;
+3. add a short link to the footer's Blog column on every page;
+4. add the pages to `sitemap.xml`.
 
 Any new page needs the full set of `<link rel="alternate" hreflang>` tags (all 19 languages plus `x-default`) in its `<head>`, matching every other language version of that page, and an entry in `sitemap.xml`.
 

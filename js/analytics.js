@@ -240,7 +240,7 @@
 
   function resolvePrivacyHref() {
     // The footer already carries the localized privacy URL for this page.
-    var link = document.querySelector('.footer-links a[href*="privacy"]');
+    var link = document.querySelector('.site-footer a[href*="privacy"]');
     return (link && link.getAttribute("href")) || "/privacy.html";
   }
 
