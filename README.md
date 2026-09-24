@@ -23,7 +23,7 @@ Below the slider, each `index.html` has a static **features section** (`#feature
 
 **Blog:** `blog.html` in every language lists the articles as cards, newest first, with `Blog` JSON-LD naming each post. To add an article, in all 19 languages:
 1. create `<slug>.html` (copy `rubber-lifespan.html`: `.guide-doc` article, "← Blog" back link, full hreflang group, `Article` JSON-LD, own title and description, store badges at the end);
-2. add a card to the top of `blog.html` (hero image link + title + description, same markup as the existing cards) and a `BlogPosting` entry to its JSON-LD;
+2. add a card to the top of `blog.html` (title on the left, hero image thumbnail on the right, same markup as the existing cards) and a `BlogPosting` entry to its JSON-LD;
 3. add a short link to the footer's Blog column on every page;
 4. add the pages to `sitemap.xml`.
 

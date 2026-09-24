@@ -918,32 +918,19 @@ body.shots-modal-open {
 }
 
 .legal-doc .blog-card {
-  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 14px 14px 14px 20px;
   border-radius: 14px;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  overflow: hidden;
-}
-
-/* Article's hero image, edge to edge across the top of the card. */
-.blog-card-media {
-  display: block;
-  margin: -18px -20px 14px;
-}
-
-.blog-card-media img {
-  display: block;
-  width: 100%;
-  height: auto;
-  transition: opacity 0.15s ease;
-}
-
-.blog-card-media:hover img {
-  opacity: 0.85;
 }
 
 .legal-doc .blog-card h2 {
-  margin: 0 0 6px;
+  flex: 1;
+  min-width: 0;
+  margin: 0;
   font-size: 1.08rem;
   line-height: 1.35;
 }
@@ -957,10 +944,37 @@ body.shots-modal-open {
   color: var(--accent);
 }
 
-.legal-doc .blog-card p {
-  margin: 0;
-  font-size: 0.92rem;
-  color: var(--muted);
+/* Article's hero image as a thumbnail on the right of the card. */
+.blog-card-media {
+  flex: 0 0 200px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.blog-card-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: opacity 0.15s ease;
+}
+
+.blog-card-media:hover img {
+  opacity: 0.85;
+}
+
+@media (max-width: 520px) {
+  .legal-doc .blog-card {
+    gap: 12px;
+    padding: 12px 12px 12px 16px;
+  }
+
+  .legal-doc .blog-card h2 {
+    font-size: 1rem;
+  }
+
+  .blog-card-media {
+    flex-basis: 120px;
+  }
 }
 
 /* Store badges closing the FAQ — the landing page's .store-row, outside .hero
