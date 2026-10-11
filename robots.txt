@@ -1,4 +1,9 @@
 User-agent: *
 Allow: /
+# Match-result data files for the app's import connectors (named private players): not for search engines
+Disallow: /data/
+Disallow: /grandslam.json
+Disallow: /grandslam-matches.tsv
+Disallow: /stolnotenisovyturnaj.json
 
 Sitemap: https://getspinbook.com/sitemap.xml
