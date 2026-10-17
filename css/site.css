@@ -1357,3 +1357,24 @@ body.shots-modal-open {
   color: var(--label);
   word-break: break-all;
 }
+
+/* Hero paddle drawn by js/paddle-particles.js (replaces .hero-icon when it runs). */
+.hero-paddle {
+  display: block;
+  margin: 0 0 18px;
+  max-width: 100%;
+  touch-action: pan-y;
+}
+
+/* effects.html — particle experiments (js/paddle-particles.js, js/paddle-icon-particles.js). */
+.fx-page { max-width: var(--max-width); margin: 0 auto; padding: 36px 24px 48px; text-align: center; }
+.fx-title { margin: 0 0 8px; font-size: 24px; font-weight: 800; color: var(--heading); }
+.fx-lead { margin: 0 auto 36px; max-width: 46ch; color: var(--body); line-height: 1.5; }
+.fx-item { margin-bottom: 48px; }
+.fx-item h2 { margin: 0 0 6px; font-size: 18px; color: var(--heading); }
+.fx-item p { margin: 0 auto 18px; max-width: 46ch; color: var(--muted); font-size: 14px; line-height: 1.5; }
+.fx-item [data-fx] { display: flex; justify-content: center; }
+/* Phones: the app-icon effect spans the full screen width (the page gutter is cancelled). */
+@media (max-width: 600px) {
+  .fx-item [data-fx="icon"] { width: 100vw; margin-left: calc(50% - 50vw); }
+}
