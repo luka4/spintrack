@@ -1,12 +1,13 @@
-/* The full app icon (blue rounded background, paddle, spinning arc ring)
+/* Hero logo: the full app icon (blue rounded background, paddle, spinning arc ring)
    drawn as particles. Geometry comes from src/components/TableTennisLoader.js
    (1024 art board). The ring rotates slowly; the pointer scatters every dot. */
 (function () {
-  var mount = document.querySelector('[data-fx="icon"]');
-  if (!mount || !window.HTMLCanvasElement) return;
+  var icon = document.querySelector(".hero-icon");
+  if (!icon || !window.HTMLCanvasElement) return;
+  var mount = icon.parentNode;
 
   // Canvas fills its container up to MAX px (full width on phones), then everything scales with it.
-  var MAX = 460, MIN = 260;
+  var MAX = 360, MIN = 240;
   var S = Math.max(MIN, Math.min(MAX, Math.round(mount.clientWidth || 300))), K = S / 1024;
   var R = S / 300;                           // dot sizes, spacing and pointer reach were tuned at 300px
   var CX = 512 * K, CY = 505 * K;            // ring centre
@@ -82,21 +83,22 @@
         add(x, y, CYAN, RING_R, true);
       }
     }
+    var H = S;
     var list = Object.keys(groups).map(function (k) { return groups[k]; });
     var all = []; list.forEach(function (g) { all = all.concat(g.dots); });
 
     // ---- canvas ----------------------------------------------------------------------------
     var dpr = Math.min(window.devicePixelRatio || 1, 2);
     var canvas = document.createElement("canvas");
-    canvas.className = "hero-paddle hero-paddle-icon";
-    canvas.width = S * dpr; canvas.height = S * dpr;
-    canvas.style.width = S + "px"; canvas.style.height = S + "px"; canvas.style.maxWidth = "100%";
-    canvas.setAttribute("role", "img"); canvas.setAttribute("aria-label", "SpinBook");
+    canvas.className = "hero-logo-fx";
+    canvas.width = S * dpr; canvas.height = H * dpr;
+    canvas.style.width = S + "px"; canvas.style.height = H + "px"; canvas.style.maxWidth = "100%";
+    canvas.setAttribute("role", "img"); canvas.setAttribute("aria-label", icon.getAttribute("alt") || "SpinBook");
     var ctx = canvas.getContext("2d"); ctx.scale(dpr, dpr);
-    mount.appendChild(canvas);
+    mount.insertBefore(canvas, icon); icon.style.display = "none";
 
     function draw() {
-      ctx.clearRect(0, 0, S, S);
+      ctx.clearRect(0, 0, S, H);
       for (var gi = 0; gi < list.length; gi++) {
         var g = list[gi]; ctx.fillStyle = g.fill; ctx.beginPath();
         for (var k = 0; k < g.dots.length; k++) { var d = g.dots[k]; ctx.moveTo(d.x + g.r, d.y); ctx.arc(d.x, d.y, g.r, 0, 6.2832); }
@@ -129,7 +131,7 @@
       if (!reduced || moving || ptr) requestAnimationFrame(step); else running = false;
     }
     function kick() { if (!running && visible) { running = true; last = 0; requestAnimationFrame(step); } }
-    function pos(e) { var r = canvas.getBoundingClientRect(); return { x: (e.clientX - r.left) * S / r.width, y: (e.clientY - r.top) * S / r.height }; }
+    function pos(e) { var r = canvas.getBoundingClientRect(); return { x: (e.clientX - r.left) * S / r.width, y: (e.clientY - r.top) * H / r.height }; }
     canvas.addEventListener("pointermove", function (e) { ptr = pos(e); kick(); });
     canvas.addEventListener("pointerleave", function () { ptr = null; kick(); });
     canvas.addEventListener("pointerdown", function (e) { var p = pos(e); push(p.x, p.y, REACH * 2.4, FORCE * 2.2); kick(); });
