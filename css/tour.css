@@ -1,0 +1,254 @@
+/* Home-page tour (js/tour.js + js/tour-stage.js): the promo video's blueprint sheet, played live.
+   Without JS, with reduced motion, on phones, or if the animation cannot run, the page shows the
+   localized store screenshots (.tour-strip) instead. */
+.tour {
+  width: 100%;
+  padding: 8px 16px 56px;
+}
+
+.tour-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tour-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border: 1px solid var(--bar-border);
+  background: radial-gradient(ellipse 80% 80% at 50% 45%, #10357a 0%, #0b2a5b 55%, #071a3b 100%);
+}
+
+.tour-frame[hidden] {
+  display: none;
+}
+
+.tour-toggle {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 1px solid var(--bar-border);
+  border-radius: 50%;
+  background: rgba(7, 26, 59, 0.82);
+  color: var(--heading);
+  cursor: pointer;
+}
+
+.tour-toggle:hover {
+  border-color: var(--cyan);
+}
+
+.tour-toggle:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 2px;
+}
+
+.tour-toggle svg {
+  display: block;
+}
+
+/* Stage: the video's 1920x1080 sheet, scaled to the frame by tour-stage.js. */
+.tour-s {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1920px;
+  height: 1080px;
+  overflow: hidden;
+  transform-origin: 0 0;
+  color: var(--heading);
+  font-family: var(--font);
+  text-align: left;
+}
+
+.tour-grid,
+.tour-vig {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1920px;
+  height: 1080px;
+}
+
+.tour-grid {
+  background-image:
+    linear-gradient(rgba(160, 205, 255, 0.16) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(160, 205, 255, 0.16) 1px, transparent 1px),
+    linear-gradient(rgba(160, 205, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(160, 205, 255, 0.06) 1px, transparent 1px);
+  background-size: 120px 120px, 120px 120px, 24px 24px, 24px 24px;
+}
+
+.tour-vig {
+  background: radial-gradient(ellipse 80% 75% at 50% 50%, rgba(0, 0, 0, 0) 55%, rgba(0, 8, 25, 0.55) 100%);
+}
+
+.tour-sheet {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 1080px;
+}
+
+.tour-s .sec {
+  position: absolute;
+  top: 0;
+  width: 1920px;
+  height: 1080px;
+  /* Longer translations must never bleed into the neighbouring sheet while the camera pans. */
+  overflow: hidden;
+}
+
+.tour-s svg.ink {
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: visible;
+}
+
+.tour-s .lbl {
+  position: absolute;
+}
+
+/* Left-hand labels are 640px boxes; right-hand and 3-D ones size to their text up to the room beside the phone. */
+.tour-s .lbl:not(.r) {
+  max-width: 400px;
+}
+
+.tour-s .lbl .k {
+  font-family: var(--font-mono);
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--cyan);
+}
+
+.tour-s .lbl .v {
+  margin-top: 6px;
+  font-size: 27px;
+  font-weight: 500;
+  color: var(--heading);
+}
+
+.tour-s .lbl.r {
+  text-align: right;
+}
+
+.tour-s .head {
+  position: absolute;
+  left: 120px;
+  top: 92px;
+}
+
+.tour-s .eyebrow {
+  font-family: var(--font-mono);
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--cyan);
+}
+
+.tour-s .title {
+  margin: 12px 0 0;
+  font-size: 64px;
+  line-height: 1.04;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--heading);
+  max-width: 800px;
+}
+
+.tour-s .title em {
+  font-style: normal;
+  color: var(--accent);
+}
+
+.tour-s .phone {
+  position: absolute;
+  width: 406.2px;
+  height: 860px;
+}
+
+.tour-s .phone img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 406.2px;
+  height: 860px;
+}
+
+.tour-s .phone .rim {
+  position: absolute;
+  inset: -5px;
+  border-radius: 68px;
+  background: linear-gradient(135deg, #9aa3b0 0%, #e6eaf0 18%, #5d6674 42%, #c4cad3 68%, #4b5361 100%);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.6), 0 40px 90px rgba(0, 6, 20, 0.55);
+}
+
+.tour-s .phone .scan {
+  position: absolute;
+  left: -12px;
+  width: 430px;
+  height: 3px;
+  background: #c9f6ff;
+  box-shadow: 0 0 16px 4px rgba(95, 227, 240, 0.8);
+}
+
+.tour-s .phone svg {
+  position: absolute;
+  left: -5px;
+  top: -5px;
+  overflow: visible;
+}
+
+/* Fallback: the localized store screenshots in a snap-scrolling strip. */
+.tour-strip {
+  display: flex;
+  gap: 14px;
+  margin: 0;
+  padding: 4px 0 12px;
+  list-style: none;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+
+.tour-strip li {
+  flex: 0 0 auto;
+  width: min(62vw, 280px);
+  scroll-snap-align: start;
+}
+
+.tour-strip img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  border: 1px solid var(--bar-border);
+}
+
+.tour.is-live .tour-strip {
+  display: none;
+}
+
+@media (max-width: 719px) {
+  .tour {
+    padding-bottom: 36px;
+  }
+
+  .tour-frame {
+    display: none;
+  }
+
+  .tour.is-live .tour-strip {
+    display: flex;
+  }
+}
