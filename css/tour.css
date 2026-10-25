@@ -54,13 +54,11 @@
   display: block;
 }
 
-/* Stage: the video's 1920x1080 sheet, scaled to the frame by tour-stage.js. */
+/* Stage: the sheet (1920x1080 wide, 1080x1800 tall; sized inline), scaled to the frame by tour-stage.js. */
 .tour-s {
   position: absolute;
   left: 0;
   top: 0;
-  width: 1920px;
-  height: 1080px;
   overflow: hidden;
   transform-origin: 0 0;
   color: var(--heading);
@@ -73,8 +71,8 @@
   position: absolute;
   left: 0;
   top: 0;
-  width: 1920px;
-  height: 1080px;
+  width: 100%;
+  height: 100%;
 }
 
 .tour-grid {
@@ -94,14 +92,13 @@
   position: absolute;
   left: 0;
   top: 0;
-  height: 1080px;
+  height: 100%;
 }
 
 .tour-s .sec {
   position: absolute;
   top: 0;
-  width: 1920px;
-  height: 1080px;
+  height: 100%;
   /* Longer translations must never bleed into the neighbouring sheet while the camera pans. */
   overflow: hidden;
 }
@@ -208,6 +205,34 @@
   overflow: visible;
 }
 
+/* Portrait sheet for phones: the frame is ~358px wide, so type is set larger (scale ~0.33). */
+.tour-s.tall .head {
+  left: 60px;
+  top: 70px;
+}
+
+.tour-s.tall .eyebrow {
+  font-size: 30px;
+}
+
+.tour-s.tall .title {
+  font-size: 76px;
+  max-width: 960px;
+}
+
+.tour-s.tall .lbl:not(.r) {
+  max-width: 960px;
+}
+
+.tour-s.tall .lbl .k {
+  font-size: 30px;
+}
+
+.tour-s.tall .lbl .v {
+  font-size: 46px;
+  line-height: 1.2;
+}
+
 /* Fallback: the localized store screenshots in a snap-scrolling strip. */
 .tour-strip {
   display: flex;
@@ -235,6 +260,8 @@
   border: 1px solid var(--bar-border);
 }
 
+/* The strip is only the safety net: hidden while the tour is loading or running. */
+.tour.is-pending .tour-strip,
 .tour.is-live .tour-strip {
   display: none;
 }
@@ -244,11 +271,8 @@
     padding-bottom: 36px;
   }
 
+  /* Portrait sheet, 1080:1800. */
   .tour-frame {
-    display: none;
-  }
-
-  .tour.is-live .tour-strip {
-    display: flex;
+    aspect-ratio: 3 / 5;
   }
 }

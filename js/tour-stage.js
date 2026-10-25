@@ -43,7 +43,14 @@ window.SpinBookTour = async function (mount, lang, opts) {
   // ---------- timing ----------
   const BPM = 120;
   const BEAT = 60 / BPM; // 0.5 s
-  const PLAN = [['home', 9], ['racket', 12], ['activity', 9], ['charts', 9]].filter(([k]) => hasGL || k !== 'racket');
+  // 'wide': the video's 1920x1080 sheet with callouts either side of the phone.
+  // 'tall': a 1080x1800 portrait sheet for phones: big phone, one caption at a time underneath.
+  const tall = !!(opts && opts.layout === 'tall');
+  const LAYOUT = tall
+    ? { W: 1080, H: 1800, pr: 0.8, beats: { home: 11, racket: 15, activity: 11, charts: 11 }, phone: { x: 245.6, y: 300, k: 1.45 }, cap: { x: 60, y: 1580 }, stagger: 1.1, poster: 2.4 }
+    : { W: 1920, H: 1080, pr: 1.25, beats: { home: 9, racket: 12, activity: 9, charts: 9 }, phone: { x: 976.9, y: 120, k: 1 }, stagger: 0.26, poster: 3.0 };
+  const SW = LAYOUT.W, SH = LAYOUT.H;
+  const PLAN = ['home', 'racket', 'activity', 'charts'].map((k) => [k, LAYOUT.beats[k]]).filter(([k]) => hasGL || k !== 'racket');
   const SEC = {};
   { let b = 0; PLAN.forEach(([k, n], i) => { SEC[k] = { i, b0: b, b1: b + n }; b += n; }); }
   const TOTAL_BEATS = PLAN.reduce((a, [, n]) => a + n, 0);
@@ -84,13 +91,14 @@ function drawable(tag, attrs, parent) { return sv(tag, { fill: 'none', stroke: '
 const setDraw = (e, p) => e.setAttribute('stroke-dashoffset', 1 - clamp01(p));
 function typeText(node, full, p) { const n = Math.round(full.length * clamp01(p)); node.textContent = full.slice(0, n); }
   // ---------- stage ----------
-  const stage = el('div', 'tour-s', mount);
+  const stage = el('div', 'tour-s' + (tall ? ' tall' : ''), mount);
+  stage.style.width = SW + 'px'; stage.style.height = SH + 'px';
   const grid = el('div', 'tour-grid', stage);
   const sheet = el('div', 'tour-sheet', stage);
   el('div', 'tour-vig', stage);
-  sheet.style.width = 1920 * PLAN.length + 'px';
+  sheet.style.width = SW * PLAN.length + 'px';
   const secEl = {};
-  PLAN.forEach(([k], i) => { const d = el('div', 'sec', sheet); d.style.left = 1920 * i + 'px'; secEl[k] = d; });
+  PLAN.forEach(([k], i) => { const d = el('div', 'sec', sheet); d.style.left = SW * i + 'px'; d.style.width = SW + 'px'; secEl[k] = d; });
   const eyebrowOf = (k) => `${String(SEC[k].i + 1).padStart(2, '0')} / ${String(PLAN.length).padStart(2, '0')}`;
   function makeHead(parent, key, title) {
     const h = el('div', 'head', parent);
@@ -108,16 +116,16 @@ function addLabel(parent, x, y, k, v, right = false) {
 
 // phones that go wireframe -> render
 const S = 406.2 / 1000;
-function makePhone(parent, shot, left, top) {
+function makePhone(parent, shot, left, top, k = 1) {
   const ph = el('div', 'phone', parent);
-  css(ph, { left: left + 'px', top: top + 'px' });
+  css(ph, { left: left + 'px', top: top + 'px', transformOrigin: '0 0', transform: k === 1 ? '' : `scale(${k})` });
   const rim = el('div', 'rim', ph);
   const img = el('img', '', ph); img.src = `${ASSETS}device-${shot}.webp`;
   const svg = sv('svg', { width: 416.2, height: 870 }, ph);
   const outline = drawable('rect', { x: 1, y: 1, width: 414.2, height: 868, rx: 68, 'stroke-width': 2.5 }, svg);
   const notch = drawable('rect', { x: 150, y: 28, width: 116, height: 32, rx: 16, 'stroke-width': 2 }, svg);
   const scan = el('div', 'scan', ph);
-  return { ph, rim, img, outline, notch, scan, anchor: (x, y) => ({ x: left + x * S, y: top + y * S }) };
+  return { ph, rim, img, outline, notch, scan, anchor: (x, y) => ({ x: left + x * S * k, y: top + y * S * k }) };
 }
 function phoneReveal(P, t, t0) {
   setDraw(P.outline, prog(t, t0, 0.7, easeInOutCubic)); setDraw(P.notch, prog(t, t0 + 0.3, 0.4));
@@ -147,12 +155,40 @@ function phoneReveal(P, t, t0) {
       { a: [900, 516], side: 'R', y: 340, k: L.ch3k, v: L.ch3v },
     ] },
   };
-  const CALL_STAGGER = 0.26;
+  const CALL_STAGGER = LAYOUT.stagger;
+  // tall layout: a dot with a pulsing ring marks the point being described; its caption sits under the phone
+  function pulseDot(ink) {
+    return {
+      ring: sv('circle', { r: 0, fill: 'none', stroke: '#5fe3f0', 'stroke-width': 4 }, ink),
+      dot: sv('circle', { r: 0, fill: '#5fe3f0', stroke: '#0b2a5b', 'stroke-width': 3 }, ink),
+    };
+  }
+  // One callout at a time: callout i owns [s_i, s_i+1); the last one holds until tEnd.
+  function windowed(calls, cap, t, sStart, tEnd, pointOf) {
+    let active = -1;
+    calls.forEach((C, i) => {
+      const s = sStart + i * LAYOUT.stagger, e = i === calls.length - 1 ? tEnd : s + LAYOUT.stagger;
+      if (t >= s) active = i;
+      const A = pointOf(C, i), out = 1 - prog(t, e - 0.2, 0.2), live = t >= s && t < e ? 1 : 0, ph = t >= s ? ((t - s) % 1.1) / 1.1 : 0;
+      C.dot.setAttribute('cx', A.x); C.dot.setAttribute('cy', A.y); C.dot.setAttribute('r', 20 * spring(t - s, 0.5, 14) * out);
+      C.ring.setAttribute('cx', A.x); C.ring.setAttribute('cy', A.y); C.ring.setAttribute('r', 20 + 38 * ph);
+      C.ring.style.opacity = live * (1 - ph) * 0.9;
+    });
+    if (active < 0) { cap.d.style.opacity = 0; return; }
+    const C = calls[active], s = sStart + active * LAYOUT.stagger, e = active === calls.length - 1 ? tEnd : s + LAYOUT.stagger;
+    typeText(cap.kk, C.k, prog(t, s + 0.05, 0.25)); typeText(cap.vv, C.v, prog(t, s + 0.15, 0.45));
+    cap.d.style.opacity = 1 - prog(t, e - 0.2, 0.2);
+  }
   const callSections = Object.entries(CALLOUT_SCREENS).filter(([key]) => SEC[key]).map(([key, C]) => {
     const parent = secEl[key];
     const head = makeHead(parent, key, C.title);
-    const phone = makePhone(parent, C.shot, 976.9, 120);
-    const ink = sv('svg', { class: 'ink', width: 1920, height: 1080 }, parent);
+    const phone = makePhone(parent, C.shot, LAYOUT.phone.x, LAYOUT.phone.y, LAYOUT.phone.k);
+    const ink = sv('svg', { class: 'ink', width: SW, height: SH }, parent);
+    if (tall) {
+      const cap = addLabel(parent, LAYOUT.cap.x, LAYOUT.cap.y, '', '');
+      const calls = C.calls.map((c) => ({ A: phone.anchor(c.a[0], c.a[1]), k: up(c.k), v: c.v, ...pulseDot(ink) }));
+      return { key, head, phone, cap, calls };
+    }
     const calls = C.calls.map((c) => {
       const A = phone.anchor(c.a[0], c.a[1]);
       const ex = c.side === 'L' ? 930 : 1430, lx = c.side === 'L' ? 890 : 1470;
@@ -167,6 +203,7 @@ function phoneReveal(P, t, t0) {
     const t0 = T[CS.key];
     headIn(CS.head, t, t0 + 0.2);
     phoneReveal(CS.phone, t, t0 + 0.15);
+    if (tall) { windowed(CS.calls, CS.cap, t, t0 + 1.4, at(SEC[CS.key].b1) - 0.25, (C) => C.A); return; }
     CS.calls.forEach((C, i) => {
       const s = t0 + 1.3 + i * CALL_STAGGER;
       setDraw(C.path, prog(t, s, 0.45, easeInOutCubic));
@@ -178,23 +215,26 @@ function phoneReveal(P, t, t0) {
   // ---------- racket builder: a real 3-D racket (three.js) ----------
   // Dimensions in mm: 152x159 head, 5.8 mm 7-ply ALC blade, 2.1 mm sponges, 1.7 mm topsheets,
   // flared (FL) handle 24 mm thick with laminated cheeks. Rendered inside seek(), never animated on its own.
-  const GL = { x: 70, y: 250, w: 900, h: 800 };
+  const GL = tall ? { x: 20, y: 300, w: 1040, h: 1150 } : { x: 70, y: 250, w: 900, h: 800 };
   const RACK_CAM = { az0: -116, turn: 18, pol: 50, dist: 600, target: [0, 38, 0] };
-  let R3 = null, rackHead, glCanvas, rackPhone, rackCalls = [];
+  let R3 = null, rackHead, glCanvas, rackPhone, rackCap, rackCalls = [];
 
   if (SEC.racket) {
     const sR = secEl.racket;
     rackHead = makeHead(sR, 'racket', L.t_racket);
     glCanvas = el('canvas', '', sR);
     css(glCanvas, { position: 'absolute', left: GL.x + 'px', top: GL.y + 'px', width: GL.w + 'px', height: GL.h + 'px', opacity: 0 });
-    rackPhone = makePhone(sR, 'racket', 1330, 120);
-    const rackInk = sv('svg', { class: 'ink', width: 1920, height: 1080 }, sR);
+    if (!tall) rackPhone = makePhone(sR, 'racket', 1330, 120);
+    const rackInk = sv('svg', { class: 'ink', width: SW, height: SH }, sR);
     const RACKET_LABELS = [
       { key: 'fhTop', name: L.rk_fh, v: 'Andro NUZN 50 · 96%', anchor: [58, 120] },
       { key: 'bhTop', name: L.rk_bh, v: 'Xiom Vega Korea · 97%', anchor: [75.4, 92] },
       { key: 'handle', name: L.rk_blade, v: 'Sanwei 75 ALC', anchor: [0, -60] },
     ];
-    rackCalls = RACKET_LABELS.map((RL) => ({
+    if (tall) {
+      rackCap = addLabel(sR, LAYOUT.cap.x, LAYOUT.cap.y, '', '');
+      rackCalls = RACKET_LABELS.map((RL) => ({ L: RL, k: up(RL.name), v: RL.v, ...pulseDot(rackInk) }));
+    } else rackCalls = RACKET_LABELS.map((RL) => ({
       L: RL, path: drawable('path', { stroke: 'rgba(95,227,240,0.9)' }, rackInk),
       dot: sv('circle', { r: 0, fill: '#5fe3f0', stroke: '#0b2a5b', 'stroke-width': 2 }, rackInk),
       lab: addLabel(sR, 0, 0, up(RL.name), RL.v),
@@ -208,7 +248,7 @@ function phoneReveal(P, t, t0) {
 function makeRacket3D(canvas, W, H) {
   const rnd = mulberry32(777);
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true, preserveDrawingBuffer: true });
-  renderer.setPixelRatio(1.25);
+  renderer.setPixelRatio(LAYOUT.pr);
   renderer.setSize(W, H, false);
   renderer.setClearColor(0x000000, 0);
   renderer.outputEncoding = THREE.sRGBEncoding;
@@ -402,8 +442,8 @@ function makeRacket3D(canvas, W, H) {
     sheet.style.opacity = prog(t, 0, 0.4) * (1 - prog(t, DURATION - 0.4, 0.4));
     let pan = 0;
     PANS.forEach((P) => { pan += prog(t, P - 0.35, 0.75, easeInOutCubic); });
-    sheet.style.transform = `translateX(${-1920 * pan}px)`;
-    const gp = `${-1920 * pan}px 0`;
+    sheet.style.transform = `translateX(${-SW * pan}px)`;
+    const gp = `${-SW * pan}px 0`;
     grid.style.backgroundPosition = [gp, gp, gp, gp].join(', ');
     // only the sections near the camera do any work
     const near = (k) => !!SEC[k] && Math.abs(SEC[k].i - pan) < 1.05;
@@ -421,7 +461,8 @@ function makeRacket3D(canvas, W, H) {
     const E = clamp01(spring(tq - (T0 + 0.8), 0.7, 7)) * (1 - prog(tq, regroup, 0.4, easeInOutCubic));
     const flip = prog(tq, T1 - 1.85, 1.25, easeInOutCubic);
     R3.render({ E, az: RACK_CAM.az0 + RACK_CAM.turn * prog(tq, T0 - 0.4, T1 - T0 + 0.4), flip });
-    rackCalls.forEach((C, i) => {
+    if (tall) windowed(rackCalls, rackCap, t, T0 + 1.5, regroup - 0.1, (C) => R3.project(C.L.key, C.L.anchor[0], C.L.anchor[1]));
+    else rackCalls.forEach((C, i) => {
       const A = R3.project(C.L.key, C.L.anchor[0], C.L.anchor[1]);
       const ly = [372, 560, 760][i], lx = 960;
       C.path.setAttribute('d', `M ${A.x} ${A.y} L ${lx - 40} ${ly + 18} L ${lx} ${ly + 18}`);
@@ -433,12 +474,12 @@ function makeRacket3D(canvas, W, H) {
       const fade = 1 - prog(t, regroup - 0.2, 0.3);
       C.path.style.opacity = fade; C.dot.style.opacity = fade; C.lab.d.style.opacity = fade;
     });
-    phoneReveal(rackPhone, t, T0 + 1.0);
+    if (rackPhone) phoneReveal(rackPhone, t, T0 + 1.0);
   }
   }
 
   // ---------- fit, preload, playback ----------
-  const fit = () => { stage.style.transform = `scale(${mount.clientWidth / 1920})`; };
+  const fit = () => { stage.style.transform = `scale(${mount.clientWidth / SW})`; };
   fit();
   const ro = typeof ResizeObserver === 'function' ? new ResizeObserver(fit) : null;
   if (ro) ro.observe(mount); else addEventListener('resize', fit);
@@ -461,6 +502,10 @@ function makeRacket3D(canvas, W, H) {
   return {
     duration: DURATION,
     labels: L,
+    layout: tall ? 'tall' : 'wide',
+    // a finished frame (phone drawn, first callouts typed) for people who asked for reduced motion
+    showPoster() { seek(T.home + LAYOUT.poster); },
+    seekTo(sec) { seek(((sec % DURATION) + DURATION) % DURATION); },
     get playing() { return playing; },
     play() { if (playing) return; playing = true; last = performance.now(); acc = 0; raf = requestAnimationFrame(frame); },
     pause() { playing = false; cancelAnimationFrame(raf); },
