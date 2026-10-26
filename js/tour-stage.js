@@ -34,6 +34,10 @@ window.SpinBookTour = async function (mount, lang, opts) {
   const em = (s) => s.replace(/\*(.+?)\*/g, '<em>$1</em>');
   const up = (s) => s.toLocaleUpperCase(base);
   const ASSETS = (opts && opts.assets) || '/assets/tour/';
+  // The phones show the page language's store screenshots (assets/tour/<lang>/, cut by scripts/cut-tour-devices.py);
+  // English and Hindi use assets/tour/ itself. The racket phone is English everywhere: it has to match the 3-D racket.
+  const SHOT_LANGS = ['cs', 'da', 'de', 'es', 'fr', 'hu', 'it', 'ja', 'ko', 'pl', 'pt', 'ro', 'ru', 'sk', 'sv', 'uk', 'zh'];
+  const SHOTS = SHOT_LANGS.includes(base) ? `${ASSETS}${base}/` : ASSETS;
 
   // WebGL is only needed for the 3-D racket; without it that screen is left out of the loop.
   const hasGL = (() => {
@@ -120,7 +124,7 @@ function makePhone(parent, shot, left, top, k = 1) {
   const ph = el('div', 'phone', parent);
   css(ph, { left: left + 'px', top: top + 'px', transformOrigin: '0 0', transform: k === 1 ? '' : `scale(${k})` });
   const rim = el('div', 'rim', ph);
-  const img = el('img', '', ph); img.src = `${ASSETS}device-${shot}.webp`;
+  const img = el('img', '', ph); img.src = `${shot === 'racket' ? ASSETS : SHOTS}device-${shot}.webp`;
   const svg = sv('svg', { width: 416.2, height: 870 }, ph);
   const outline = drawable('rect', { x: 1, y: 1, width: 414.2, height: 868, rx: 68, 'stroke-width': 2.5 }, svg);
   const notch = drawable('rect', { x: 150, y: 28, width: 116, height: 32, rx: 16, 'stroke-width': 2 }, svg);
@@ -175,6 +179,21 @@ function phoneReveal(P, t, t0) {
       { a: [900, 516], side: 'R', y: 340, k: L.ch3k, v: L.ch3v },
     ] },
   };
+  // A language whose screenshot is laid out differently from the English one gets its own anchors (screen -> callout index -> [x, y]).
+  const OWN_COUNTRY_FIRST = { 1: [944, 568] }; // community: the highlighted country (Slovakia) is the first row
+  const SHOT_ANCHORS = {
+    de: {
+      filters: { 0: [144, 550], 1: [905, 991], 2: [120, 1514] }, // the sheet sits higher, over the diary
+      community: OWN_COUNTRY_FIRST,
+    },
+    fr: { community: OWN_COUNTRY_FIRST },
+    ja: { community: OWN_COUNTRY_FIRST },
+    ko: { community: OWN_COUNTRY_FIRST },
+    uk: { community: OWN_COUNTRY_FIRST },
+    // overview tabs and the year picker push the cards down; the training-hours chart is cut off, so its dot marks the card title
+    ru: { charts: { 0: [60, 936], 1: [60, 1646], 2: [900, 750] } },
+  };
+  Object.entries(SHOT_ANCHORS[base] || {}).forEach(([key, byCall]) => Object.entries(byCall).forEach(([i, a]) => { CALLOUT_SCREENS[key].calls[i].a = a; }));
   const CALL_STAGGER = LAYOUT.stagger;
   // tall layout: a dot with a pulsing ring marks the point being described; its caption sits under the phone
   function pulseDot(ink) {
