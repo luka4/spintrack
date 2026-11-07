@@ -104,6 +104,7 @@ a:hover {
   inset: 0;
   z-index: 0;
   pointer-events: none;
+  overflow: hidden;
   /* Drawing grid (major 120px, minor 24px) over the navy gradient and a soft vignette. */
   background:
     radial-gradient(ellipse 80% 75% at 50% 50%, rgba(0, 8, 25, 0) 55%, rgba(0, 8, 25, 0.5) 100%),
@@ -112,6 +113,53 @@ a:hover {
     linear-gradient(rgba(160, 205, 255, 0.04) 1px, transparent 1px) 0 0 / 24px 24px,
     linear-gradient(90deg, rgba(160, 205, 255, 0.04) 1px, transparent 1px) 0 0 / 24px 24px,
     radial-gradient(ellipse 80% 80% at 50% 45%, #10357a 0%, #0b2a5b 55%, #071a3b 100%);
+}
+
+/* Faint technical drafts on the sheet (assets/drafts/*.svg): a racket bottom-left and a table plan
+   bottom-right (clear of the hero), both partly off-screen so they read as a drawing in progress, not as content.
+   They sit in the side margins on wide screens; on phones they shrink and fade further. */
+.bg-layer::before,
+.bg-layer::after {
+  content: "";
+  position: absolute;
+  background: no-repeat center / contain;
+  pointer-events: none;
+}
+
+.bg-layer::before {
+  background-image: url("/assets/drafts/racket.svg");
+  width: min(62vh, 40vw);
+  aspect-ratio: 265 / 310;
+  left: max(-12vh, -9vw);
+  bottom: -14vh;
+  transform: rotate(-24deg);
+  opacity: 0.22;
+}
+
+.bg-layer::after {
+  background-image: url("/assets/drafts/table.svg");
+  width: min(80vh, 46vw);
+  aspect-ratio: 3140 / 1900;
+  right: max(-24vh, -15vw);
+  bottom: 4vh;
+  transform: rotate(-16deg);
+  opacity: 0.18;
+}
+
+@media (max-width: 720px) {
+  .bg-layer::before {
+    width: 80vw;
+    left: -26vw;
+    bottom: -8vh;
+    opacity: 0.16;
+  }
+
+  .bg-layer::after {
+    width: 100vw;
+    right: -52vw;
+    bottom: 22vh;
+    opacity: 0.12;
+  }
 }
 
 

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-200 -150 3140 1900" fill="none" stroke="#a0cdff" stroke-width="1.5">
+  <!-- Plan view of a table tennis table (2740 x 1525 mm) with a ball, for the site background; see css/site.css .bg-layer -->
+  <style>*{vector-effect:non-scaling-stroke}text{font:500 64px "JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;fill:#5fe3f0;stroke:none;text-anchor:middle}.f{stroke-opacity:.55}.c{stroke-dasharray:18 5 3 5;stroke-width:1;stroke-opacity:.7}</style>
+  <rect width="2740" height="1525" stroke-width="2.4"/>
+  <rect x="20" y="20" width="2700" height="1485" class="f"/>
+  <path d="M30 762.5H2710" class="f"/>
+  <path d="M1370-120V1645" stroke-width="3"/>
+  <path d="M1370-150V1675" class="c"/>
+  <circle cx="1370" cy="-120" r="14"/><circle cx="1370" cy="1645" r="14"/>
+  <path d="M0-20V-110M2740-20V-110M0-80H2740M-15-65 15-95M2725-65 2755-95"/>
+  <text x="1370" y="-96">2740</text>
+  <path d="M-20 0H-150M-20 1525H-150M-120 0V1525M-135 15-105-15M-135 1540-105 1510"/>
+  <text x="-136" y="762" transform="rotate(-90 -136 762)">1525</text>
+  <path d="M1370 1525V1700M1215 1700H1525" class="f"/><text x="1370" y="1760" style="font-size:48px">NET 152.5</text>
+  <g transform="translate(2060 380)">
+    <circle r="120" stroke-width="2.4"/>
+    <path d="M-170 0H170M0-170V170" class="c"/>
+    <path d="M85-85 180-180H300"/><text x="240" y="-196">Ø40</text>
+  </g>
+  <path d="M520 1260Q900 300 2060 380" stroke-dasharray="3 22" stroke-linecap="round" class="f"/>
+</svg>
