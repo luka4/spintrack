@@ -4667,3 +4667,566 @@ gs2026-r2	consolation	útecha: semifinále	nitsko-vladimir	burian-branislav	3	1	
 gs2026-r2	consolation	útecha: semifinále	pastva-ondrej	klauco-emil	3	1	pastva-ondrej
 gs2026-r2	consolation	útecha: finále	nitsko-vladimir	pastva-ondrej	1	3	pastva-ondrej
 gs2026-r2	consolation	útecha: o 3. miesto	burian-branislav	klauco-emil	1	3	klauco-emil
+gs2026-r3	group	skupina A	jakubec-peter	liptak-daniel	2	0	jakubec-peter
+gs2026-r3	group	skupina A	jakubec-peter	jerzova-katarina	2	0	jakubec-peter
+gs2026-r3	group	skupina A	jakubec-peter	porubcan-zdenko	2	0	jakubec-peter
+gs2026-r3	group	skupina A	jakubec-peter	szczeczina-peter	2	0	jakubec-peter
+gs2026-r3	group	skupina A	jakubec-peter	molitorisova-lenka	2	0	jakubec-peter
+gs2026-r3	group	skupina A	jakubec-peter	kunik-tomas	2	0	jakubec-peter
+gs2026-r3	group	skupina A	jakubec-peter	cebik-mario	2	0	jakubec-peter
+gs2026-r3	group	skupina A	jakubec-peter	mrmus-anton	2	0	jakubec-peter
+gs2026-r3	group	skupina A	liptak-daniel	jerzova-katarina	2	1	liptak-daniel
+gs2026-r3	group	skupina A	liptak-daniel	porubcan-zdenko	2	1	liptak-daniel
+gs2026-r3	group	skupina A	liptak-daniel	szczeczina-peter	2	1	liptak-daniel
+gs2026-r3	group	skupina A	liptak-daniel	molitorisova-lenka	2	1	liptak-daniel
+gs2026-r3	group	skupina A	liptak-daniel	kunik-tomas	2	0	liptak-daniel
+gs2026-r3	group	skupina A	liptak-daniel	cebik-mario	1	2	cebik-mario
+gs2026-r3	group	skupina A	liptak-daniel	mrmus-anton	2	0	liptak-daniel
+gs2026-r3	group	skupina A	jerzova-katarina	porubcan-zdenko	2	0	jerzova-katarina
+gs2026-r3	group	skupina A	jerzova-katarina	szczeczina-peter	2	1	jerzova-katarina
+gs2026-r3	group	skupina A	jerzova-katarina	molitorisova-lenka	2	1	jerzova-katarina
+gs2026-r3	group	skupina A	jerzova-katarina	kunik-tomas	2	0	jerzova-katarina
+gs2026-r3	group	skupina A	jerzova-katarina	cebik-mario	2	0	jerzova-katarina
+gs2026-r3	group	skupina A	jerzova-katarina	mrmus-anton	2	0	jerzova-katarina
+gs2026-r3	group	skupina A	porubcan-zdenko	szczeczina-peter	2	0	porubcan-zdenko
+gs2026-r3	group	skupina A	porubcan-zdenko	molitorisova-lenka	2	0	porubcan-zdenko
+gs2026-r3	group	skupina A	porubcan-zdenko	kunik-tomas	2	0	porubcan-zdenko
+gs2026-r3	group	skupina A	porubcan-zdenko	cebik-mario	2	1	porubcan-zdenko
+gs2026-r3	group	skupina A	porubcan-zdenko	mrmus-anton	2	0	porubcan-zdenko
+gs2026-r3	group	skupina A	szczeczina-peter	molitorisova-lenka	2	0	szczeczina-peter
+gs2026-r3	group	skupina A	szczeczina-peter	kunik-tomas	2	0	szczeczina-peter
+gs2026-r3	group	skupina A	szczeczina-peter	cebik-mario	2	0	szczeczina-peter
+gs2026-r3	group	skupina A	szczeczina-peter	mrmus-anton	0	2	mrmus-anton
+gs2026-r3	group	skupina A	molitorisova-lenka	kunik-tomas	2	0	molitorisova-lenka
+gs2026-r3	group	skupina A	molitorisova-lenka	cebik-mario	2	0	molitorisova-lenka
+gs2026-r3	group	skupina A	molitorisova-lenka	mrmus-anton	2	1	molitorisova-lenka
+gs2026-r3	group	skupina A	kunik-tomas	cebik-mario	2	0	kunik-tomas
+gs2026-r3	group	skupina A	kunik-tomas	mrmus-anton	2	1	kunik-tomas
+gs2026-r3	group	skupina A	cebik-mario	mrmus-anton	2	0	cebik-mario
+gs2026-r3	group	skupina B	suranovsky-martin	vanek-richard	2	1	suranovsky-martin
+gs2026-r3	group	skupina B	suranovsky-martin	takacs-tamas	2	1	suranovsky-martin
+gs2026-r3	group	skupina B	suranovsky-martin	hudec-jan	2	0	suranovsky-martin
+gs2026-r3	group	skupina B	suranovsky-martin	poliak-miroslav	2	0	suranovsky-martin
+gs2026-r3	group	skupina B	suranovsky-martin	laurov-miroslav	2	0	suranovsky-martin
+gs2026-r3	group	skupina B	suranovsky-martin	mrazkova-viera	2	0	suranovsky-martin
+gs2026-r3	group	skupina B	suranovsky-martin	harcek-peter	2	0	suranovsky-martin
+gs2026-r3	group	skupina B	suranovsky-martin	janotak-michal	2	0	suranovsky-martin
+gs2026-r3	group	skupina B	vanek-richard	takacs-tamas	2	0	vanek-richard
+gs2026-r3	group	skupina B	vanek-richard	hudec-jan	2	0	vanek-richard
+gs2026-r3	group	skupina B	vanek-richard	poliak-miroslav	2	0	vanek-richard
+gs2026-r3	group	skupina B	vanek-richard	laurov-miroslav	2	0	vanek-richard
+gs2026-r3	group	skupina B	vanek-richard	mrazkova-viera	2	0	vanek-richard
+gs2026-r3	group	skupina B	vanek-richard	harcek-peter	2	0	vanek-richard
+gs2026-r3	group	skupina B	vanek-richard	janotak-michal	2	0	vanek-richard
+gs2026-r3	group	skupina B	takacs-tamas	hudec-jan	0	2	hudec-jan
+gs2026-r3	group	skupina B	takacs-tamas	poliak-miroslav	2	0	takacs-tamas
+gs2026-r3	group	skupina B	takacs-tamas	laurov-miroslav	2	0	takacs-tamas
+gs2026-r3	group	skupina B	takacs-tamas	mrazkova-viera	2	0	takacs-tamas
+gs2026-r3	group	skupina B	takacs-tamas	harcek-peter	2	0	takacs-tamas
+gs2026-r3	group	skupina B	takacs-tamas	janotak-michal	2	0	takacs-tamas
+gs2026-r3	group	skupina B	hudec-jan	poliak-miroslav	0	2	poliak-miroslav
+gs2026-r3	group	skupina B	hudec-jan	laurov-miroslav	2	1	hudec-jan
+gs2026-r3	group	skupina B	hudec-jan	mrazkova-viera	2	0	hudec-jan
+gs2026-r3	group	skupina B	hudec-jan	harcek-peter	2	0	hudec-jan
+gs2026-r3	group	skupina B	hudec-jan	janotak-michal	2	0	hudec-jan
+gs2026-r3	group	skupina B	poliak-miroslav	laurov-miroslav	2	1	poliak-miroslav
+gs2026-r3	group	skupina B	poliak-miroslav	mrazkova-viera	2	0	poliak-miroslav
+gs2026-r3	group	skupina B	poliak-miroslav	harcek-peter	2	1	poliak-miroslav
+gs2026-r3	group	skupina B	poliak-miroslav	janotak-michal	2	0	poliak-miroslav
+gs2026-r3	group	skupina B	laurov-miroslav	mrazkova-viera	2	0	laurov-miroslav
+gs2026-r3	group	skupina B	laurov-miroslav	harcek-peter	2	0	laurov-miroslav
+gs2026-r3	group	skupina B	laurov-miroslav	janotak-michal	2	0	laurov-miroslav
+gs2026-r3	group	skupina B	mrazkova-viera	harcek-peter	2	1	mrazkova-viera
+gs2026-r3	group	skupina B	mrazkova-viera	janotak-michal	2	0	mrazkova-viera
+gs2026-r3	group	skupina B	harcek-peter	janotak-michal	2	0	harcek-peter
+gs2026-r3	group	skupina C	klauco-matej	kundrak-tomas	2	0	klauco-matej
+gs2026-r3	group	skupina C	klauco-matej	kotov-denis	2	1	klauco-matej
+gs2026-r3	group	skupina C	klauco-matej	bojtos-roland	2	0	klauco-matej
+gs2026-r3	group	skupina C	klauco-matej	konarik-ladislav	2	0	klauco-matej
+gs2026-r3	group	skupina C	klauco-matej	lukacek-julian	2	0	klauco-matej
+gs2026-r3	group	skupina C	klauco-matej	polackova-luboslava	2	0	klauco-matej
+gs2026-r3	group	skupina C	klauco-matej	tvrdon-peter	2	0	klauco-matej
+gs2026-r3	group	skupina C	klauco-matej	bagin-miroslav	2	0	klauco-matej
+gs2026-r3	group	skupina C	kundrak-tomas	kotov-denis	2	0	kundrak-tomas
+gs2026-r3	group	skupina C	kundrak-tomas	bojtos-roland	2	1	kundrak-tomas
+gs2026-r3	group	skupina C	kundrak-tomas	konarik-ladislav	2	0	kundrak-tomas
+gs2026-r3	group	skupina C	kundrak-tomas	lukacek-julian	2	0	kundrak-tomas
+gs2026-r3	group	skupina C	kundrak-tomas	polackova-luboslava	2	0	kundrak-tomas
+gs2026-r3	group	skupina C	kundrak-tomas	tvrdon-peter	2	0	kundrak-tomas
+gs2026-r3	group	skupina C	kundrak-tomas	bagin-miroslav	2	0	kundrak-tomas
+gs2026-r3	group	skupina C	kotov-denis	bojtos-roland	2	1	kotov-denis
+gs2026-r3	group	skupina C	kotov-denis	konarik-ladislav	2	0	kotov-denis
+gs2026-r3	group	skupina C	kotov-denis	lukacek-julian	2	0	kotov-denis
+gs2026-r3	group	skupina C	kotov-denis	polackova-luboslava	2	0	kotov-denis
+gs2026-r3	group	skupina C	kotov-denis	tvrdon-peter	1	2	tvrdon-peter
+gs2026-r3	group	skupina C	kotov-denis	bagin-miroslav	2	0	kotov-denis
+gs2026-r3	group	skupina C	bojtos-roland	konarik-ladislav	2	0	bojtos-roland
+gs2026-r3	group	skupina C	bojtos-roland	lukacek-julian	2	0	bojtos-roland
+gs2026-r3	group	skupina C	bojtos-roland	polackova-luboslava	2	0	bojtos-roland
+gs2026-r3	group	skupina C	bojtos-roland	tvrdon-peter	2	0	bojtos-roland
+gs2026-r3	group	skupina C	bojtos-roland	bagin-miroslav	2	0	bojtos-roland
+gs2026-r3	group	skupina C	konarik-ladislav	lukacek-julian	2	0	konarik-ladislav
+gs2026-r3	group	skupina C	konarik-ladislav	polackova-luboslava	2	0	konarik-ladislav
+gs2026-r3	group	skupina C	konarik-ladislav	tvrdon-peter	2	1	konarik-ladislav
+gs2026-r3	group	skupina C	konarik-ladislav	bagin-miroslav	2	0	konarik-ladislav
+gs2026-r3	group	skupina C	lukacek-julian	polackova-luboslava	2	0	lukacek-julian
+gs2026-r3	group	skupina C	lukacek-julian	tvrdon-peter	2	0	lukacek-julian
+gs2026-r3	group	skupina C	lukacek-julian	bagin-miroslav	2	1	lukacek-julian
+gs2026-r3	group	skupina C	polackova-luboslava	tvrdon-peter	2	0	polackova-luboslava
+gs2026-r3	group	skupina C	polackova-luboslava	bagin-miroslav	2	1	polackova-luboslava
+gs2026-r3	group	skupina C	tvrdon-peter	bagin-miroslav	2	1	tvrdon-peter
+gs2026-r3	group	skupina D	mocik-tomas	liskova-miriam	2	0	mocik-tomas
+gs2026-r3	group	skupina D	mocik-tomas	kundrik-marek	2	0	mocik-tomas
+gs2026-r3	group	skupina D	mocik-tomas	donoval-lubos	2	0	mocik-tomas
+gs2026-r3	group	skupina D	mocik-tomas	sedlacek-michal	2	1	mocik-tomas
+gs2026-r3	group	skupina D	mocik-tomas	klauco-emil	2	0	mocik-tomas
+gs2026-r3	group	skupina D	mocik-tomas	lukacek-julian-st	2	0	mocik-tomas
+gs2026-r3	group	skupina D	mocik-tomas	koys-andrej	2	0	mocik-tomas
+gs2026-r3	group	skupina D	mocik-tomas	skalska-katarina	2	0	mocik-tomas
+gs2026-r3	group	skupina D	liskova-miriam	kundrik-marek	2	0	liskova-miriam
+gs2026-r3	group	skupina D	liskova-miriam	donoval-lubos	2	0	liskova-miriam
+gs2026-r3	group	skupina D	liskova-miriam	sedlacek-michal	2	0	liskova-miriam
+gs2026-r3	group	skupina D	liskova-miriam	klauco-emil	2	0	liskova-miriam
+gs2026-r3	group	skupina D	liskova-miriam	lukacek-julian-st	2	0	liskova-miriam
+gs2026-r3	group	skupina D	liskova-miriam	koys-andrej	2	0	liskova-miriam
+gs2026-r3	group	skupina D	liskova-miriam	skalska-katarina	2	0	liskova-miriam
+gs2026-r3	group	skupina D	kundrik-marek	donoval-lubos	2	0	kundrik-marek
+gs2026-r3	group	skupina D	kundrik-marek	sedlacek-michal	2	0	kundrik-marek
+gs2026-r3	group	skupina D	kundrik-marek	klauco-emil	2	0	kundrik-marek
+gs2026-r3	group	skupina D	kundrik-marek	lukacek-julian-st	2	0	kundrik-marek
+gs2026-r3	group	skupina D	kundrik-marek	koys-andrej	2	0	kundrik-marek
+gs2026-r3	group	skupina D	kundrik-marek	skalska-katarina	2	0	kundrik-marek
+gs2026-r3	group	skupina D	donoval-lubos	sedlacek-michal	2	1	donoval-lubos
+gs2026-r3	group	skupina D	donoval-lubos	klauco-emil	2	0	donoval-lubos
+gs2026-r3	group	skupina D	donoval-lubos	lukacek-julian-st	2	1	donoval-lubos
+gs2026-r3	group	skupina D	donoval-lubos	koys-andrej	2	0	donoval-lubos
+gs2026-r3	group	skupina D	donoval-lubos	skalska-katarina	2	0	donoval-lubos
+gs2026-r3	group	skupina D	sedlacek-michal	klauco-emil	2	0	sedlacek-michal
+gs2026-r3	group	skupina D	sedlacek-michal	lukacek-julian-st	1	2	lukacek-julian-st
+gs2026-r3	group	skupina D	sedlacek-michal	koys-andrej	2	0	sedlacek-michal
+gs2026-r3	group	skupina D	sedlacek-michal	skalska-katarina	2	0	sedlacek-michal
+gs2026-r3	group	skupina D	klauco-emil	lukacek-julian-st	2	0	klauco-emil
+gs2026-r3	group	skupina D	klauco-emil	koys-andrej	2	0	klauco-emil
+gs2026-r3	group	skupina D	klauco-emil	skalska-katarina	2	0	klauco-emil
+gs2026-r3	group	skupina D	lukacek-julian-st	koys-andrej	2	0	lukacek-julian-st
+gs2026-r3	group	skupina D	lukacek-julian-st	skalska-katarina	2	0	lukacek-julian-st
+gs2026-r3	group	skupina D	koys-andrej	skalska-katarina	2	0	koys-andrej
+gs2026-r3	group	skupina E	bazalka-zdenek	holecek-svetozar	2	0	bazalka-zdenek
+gs2026-r3	group	skupina E	bazalka-zdenek	danylyev-oleksandr	2	0	bazalka-zdenek
+gs2026-r3	group	skupina E	bazalka-zdenek	kubalcova-xenia	2	0	bazalka-zdenek
+gs2026-r3	group	skupina E	bazalka-zdenek	kunik-marian	2	0	bazalka-zdenek
+gs2026-r3	group	skupina E	bazalka-zdenek	dubova-maria	2	0	bazalka-zdenek
+gs2026-r3	group	skupina E	bazalka-zdenek	polacek-peter	2	0	bazalka-zdenek
+gs2026-r3	group	skupina E	bazalka-zdenek	bujalko-pavol	2	0	bazalka-zdenek
+gs2026-r3	group	skupina E	bazalka-zdenek	husarova-anna	2	0	bazalka-zdenek
+gs2026-r3	group	skupina E	holecek-svetozar	danylyev-oleksandr	2	0	holecek-svetozar
+gs2026-r3	group	skupina E	holecek-svetozar	kubalcova-xenia	2	0	holecek-svetozar
+gs2026-r3	group	skupina E	holecek-svetozar	kunik-marian	2	0	holecek-svetozar
+gs2026-r3	group	skupina E	holecek-svetozar	dubova-maria	2	0	holecek-svetozar
+gs2026-r3	group	skupina E	holecek-svetozar	polacek-peter	2	0	holecek-svetozar
+gs2026-r3	group	skupina E	holecek-svetozar	bujalko-pavol	2	1	holecek-svetozar
+gs2026-r3	group	skupina E	holecek-svetozar	husarova-anna	2	0	holecek-svetozar
+gs2026-r3	group	skupina E	danylyev-oleksandr	kubalcova-xenia	2	0	danylyev-oleksandr
+gs2026-r3	group	skupina E	danylyev-oleksandr	kunik-marian	2	0	danylyev-oleksandr
+gs2026-r3	group	skupina E	danylyev-oleksandr	dubova-maria	2	0	danylyev-oleksandr
+gs2026-r3	group	skupina E	danylyev-oleksandr	polacek-peter	2	0	danylyev-oleksandr
+gs2026-r3	group	skupina E	danylyev-oleksandr	bujalko-pavol	2	0	danylyev-oleksandr
+gs2026-r3	group	skupina E	danylyev-oleksandr	husarova-anna	2	0	danylyev-oleksandr
+gs2026-r3	group	skupina E	kubalcova-xenia	kunik-marian	2	0	kubalcova-xenia
+gs2026-r3	group	skupina E	kubalcova-xenia	dubova-maria	2	1	kubalcova-xenia
+gs2026-r3	group	skupina E	kubalcova-xenia	polacek-peter	2	0	kubalcova-xenia
+gs2026-r3	group	skupina E	kubalcova-xenia	bujalko-pavol	1	2	bujalko-pavol
+gs2026-r3	group	skupina E	kubalcova-xenia	husarova-anna	2	0	kubalcova-xenia
+gs2026-r3	group	skupina E	kunik-marian	dubova-maria	2	0	kunik-marian
+gs2026-r3	group	skupina E	kunik-marian	polacek-peter	2	0	kunik-marian
+gs2026-r3	group	skupina E	kunik-marian	bujalko-pavol	2	1	kunik-marian
+gs2026-r3	group	skupina E	kunik-marian	husarova-anna	2	0	kunik-marian
+gs2026-r3	group	skupina E	dubova-maria	polacek-peter	2	1	dubova-maria
+gs2026-r3	group	skupina E	dubova-maria	bujalko-pavol	2	1	dubova-maria
+gs2026-r3	group	skupina E	dubova-maria	husarova-anna	2	1	dubova-maria
+gs2026-r3	group	skupina E	polacek-peter	bujalko-pavol	2	0	polacek-peter
+gs2026-r3	group	skupina E	polacek-peter	husarova-anna	2	1	polacek-peter
+gs2026-r3	group	skupina E	bujalko-pavol	husarova-anna	2	0	bujalko-pavol
+gs2026-r3	group	skupina F	koritsansky-dominik	biacko-ivan	2	1	koritsansky-dominik
+gs2026-r3	group	skupina F	koritsansky-dominik	kozmer-kevin	2	0	koritsansky-dominik
+gs2026-r3	group	skupina F	koritsansky-dominik	zvarik-brano	2	0	koritsansky-dominik
+gs2026-r3	group	skupina F	koritsansky-dominik	dulay-jan	2	0	koritsansky-dominik
+gs2026-r3	group	skupina F	koritsansky-dominik	babic-adam	2	0	koritsansky-dominik
+gs2026-r3	group	skupina F	koritsansky-dominik	borucka-milada	2	0	koritsansky-dominik
+gs2026-r3	group	skupina F	koritsansky-dominik	csonka-mathias	2	0	koritsansky-dominik
+gs2026-r3	group	skupina F	koritsansky-dominik	rusinkova-katarina	2	0	koritsansky-dominik
+gs2026-r3	group	skupina F	biacko-ivan	kozmer-kevin	1	2	kozmer-kevin
+gs2026-r3	group	skupina F	biacko-ivan	zvarik-brano	2	1	biacko-ivan
+gs2026-r3	group	skupina F	biacko-ivan	dulay-jan	2	1	biacko-ivan
+gs2026-r3	group	skupina F	biacko-ivan	babic-adam	2	0	biacko-ivan
+gs2026-r3	group	skupina F	biacko-ivan	borucka-milada	2	0	biacko-ivan
+gs2026-r3	group	skupina F	biacko-ivan	csonka-mathias	2	0	biacko-ivan
+gs2026-r3	group	skupina F	biacko-ivan	rusinkova-katarina	2	0	biacko-ivan
+gs2026-r3	group	skupina F	kozmer-kevin	zvarik-brano	2	0	kozmer-kevin
+gs2026-r3	group	skupina F	kozmer-kevin	dulay-jan	1	2	dulay-jan
+gs2026-r3	group	skupina F	kozmer-kevin	babic-adam	0	2	babic-adam
+gs2026-r3	group	skupina F	kozmer-kevin	borucka-milada	2	0	kozmer-kevin
+gs2026-r3	group	skupina F	kozmer-kevin	csonka-mathias	2	0	kozmer-kevin
+gs2026-r3	group	skupina F	kozmer-kevin	rusinkova-katarina	2	0	kozmer-kevin
+gs2026-r3	group	skupina F	zvarik-brano	dulay-jan	2	0	zvarik-brano
+gs2026-r3	group	skupina F	zvarik-brano	babic-adam	2	1	zvarik-brano
+gs2026-r3	group	skupina F	zvarik-brano	borucka-milada	2	0	zvarik-brano
+gs2026-r3	group	skupina F	zvarik-brano	csonka-mathias	2	0	zvarik-brano
+gs2026-r3	group	skupina F	zvarik-brano	rusinkova-katarina	2	0	zvarik-brano
+gs2026-r3	group	skupina F	dulay-jan	babic-adam	2	0	dulay-jan
+gs2026-r3	group	skupina F	dulay-jan	borucka-milada	2	0	dulay-jan
+gs2026-r3	group	skupina F	dulay-jan	csonka-mathias	2	0	dulay-jan
+gs2026-r3	group	skupina F	dulay-jan	rusinkova-katarina	2	0	dulay-jan
+gs2026-r3	group	skupina F	babic-adam	borucka-milada	2	0	babic-adam
+gs2026-r3	group	skupina F	babic-adam	csonka-mathias	2	0	babic-adam
+gs2026-r3	group	skupina F	babic-adam	rusinkova-katarina	2	0	babic-adam
+gs2026-r3	group	skupina F	borucka-milada	csonka-mathias	2	1	borucka-milada
+gs2026-r3	group	skupina F	borucka-milada	rusinkova-katarina	2	0	borucka-milada
+gs2026-r3	group	skupina F	csonka-mathias	rusinkova-katarina	2	0	csonka-mathias
+gs2026-r3	group	skupina G	holan-marek	hlavati-zdeno	2	0	holan-marek
+gs2026-r3	group	skupina G	holan-marek	bujdak-juraj	2	1	holan-marek
+gs2026-r3	group	skupina G	holan-marek	zemanova-katarina	2	0	holan-marek
+gs2026-r3	group	skupina G	holan-marek	zradula-radoslav	2	0	holan-marek
+gs2026-r3	group	skupina G	holan-marek	polak-milan	2	1	holan-marek
+gs2026-r3	group	skupina G	holan-marek	vyskoc-roman	2	0	holan-marek
+gs2026-r3	group	skupina G	holan-marek	sendzo-imrich	2	0	holan-marek
+gs2026-r3	group	skupina G	holan-marek	debnarova-dasenka	2	0	holan-marek
+gs2026-r3	group	skupina G	hlavati-zdeno	bujdak-juraj	2	0	hlavati-zdeno
+gs2026-r3	group	skupina G	hlavati-zdeno	zemanova-katarina	2	1	hlavati-zdeno
+gs2026-r3	group	skupina G	hlavati-zdeno	zradula-radoslav	2	0	hlavati-zdeno
+gs2026-r3	group	skupina G	hlavati-zdeno	polak-milan	2	0	hlavati-zdeno
+gs2026-r3	group	skupina G	hlavati-zdeno	vyskoc-roman	2	1	hlavati-zdeno
+gs2026-r3	group	skupina G	hlavati-zdeno	sendzo-imrich	2	0	hlavati-zdeno
+gs2026-r3	group	skupina G	hlavati-zdeno	debnarova-dasenka	2	0	hlavati-zdeno
+gs2026-r3	group	skupina G	bujdak-juraj	zemanova-katarina	2	0	bujdak-juraj
+gs2026-r3	group	skupina G	bujdak-juraj	zradula-radoslav	2	0	bujdak-juraj
+gs2026-r3	group	skupina G	bujdak-juraj	polak-milan	2	0	bujdak-juraj
+gs2026-r3	group	skupina G	bujdak-juraj	vyskoc-roman	2	1	bujdak-juraj
+gs2026-r3	group	skupina G	bujdak-juraj	sendzo-imrich	2	0	bujdak-juraj
+gs2026-r3	group	skupina G	bujdak-juraj	debnarova-dasenka	2	0	bujdak-juraj
+gs2026-r3	group	skupina G	zemanova-katarina	zradula-radoslav	2	0	zemanova-katarina
+gs2026-r3	group	skupina G	zemanova-katarina	polak-milan	2	0	zemanova-katarina
+gs2026-r3	group	skupina G	zemanova-katarina	vyskoc-roman	2	1	zemanova-katarina
+gs2026-r3	group	skupina G	zemanova-katarina	sendzo-imrich	2	0	zemanova-katarina
+gs2026-r3	group	skupina G	zemanova-katarina	debnarova-dasenka	2	0	zemanova-katarina
+gs2026-r3	group	skupina G	zradula-radoslav	polak-milan	2	0	zradula-radoslav
+gs2026-r3	group	skupina G	zradula-radoslav	vyskoc-roman	2	1	zradula-radoslav
+gs2026-r3	group	skupina G	zradula-radoslav	sendzo-imrich	1	2	sendzo-imrich
+gs2026-r3	group	skupina G	zradula-radoslav	debnarova-dasenka	2	0	zradula-radoslav
+gs2026-r3	group	skupina G	polak-milan	vyskoc-roman	2	0	polak-milan
+gs2026-r3	group	skupina G	polak-milan	sendzo-imrich	2	1	polak-milan
+gs2026-r3	group	skupina G	polak-milan	debnarova-dasenka	2	0	polak-milan
+gs2026-r3	group	skupina G	vyskoc-roman	sendzo-imrich	2	0	vyskoc-roman
+gs2026-r3	group	skupina G	vyskoc-roman	debnarova-dasenka	2	0	vyskoc-roman
+gs2026-r3	group	skupina G	sendzo-imrich	debnarova-dasenka	2	0	sendzo-imrich
+gs2026-r3	group	skupina H	fulop-matej	guzmova-miroslava	2	0	fulop-matej
+gs2026-r3	group	skupina H	fulop-matej	fares-amin	2	1	fulop-matej
+gs2026-r3	group	skupina H	fulop-matej	valovcan-jaroslav-ml	2	1	fulop-matej
+gs2026-r3	group	skupina H	fulop-matej	hura-martin	2	0	fulop-matej
+gs2026-r3	group	skupina H	fulop-matej	gallo-viliam	2	0	fulop-matej
+gs2026-r3	group	skupina H	fulop-matej	vozar-vladimir	2	0	fulop-matej
+gs2026-r3	group	skupina H	fulop-matej	gunisova-lenka	2	0	fulop-matej
+gs2026-r3	group	skupina H	fulop-matej	maggioni-marco	2	0	fulop-matej
+gs2026-r3	group	skupina H	guzmova-miroslava	fares-amin	2	0	guzmova-miroslava
+gs2026-r3	group	skupina H	guzmova-miroslava	valovcan-jaroslav-ml	2	1	guzmova-miroslava
+gs2026-r3	group	skupina H	guzmova-miroslava	hura-martin	2	0	guzmova-miroslava
+gs2026-r3	group	skupina H	guzmova-miroslava	gallo-viliam	2	0	guzmova-miroslava
+gs2026-r3	group	skupina H	guzmova-miroslava	vozar-vladimir	2	0	guzmova-miroslava
+gs2026-r3	group	skupina H	guzmova-miroslava	gunisova-lenka	2	0	guzmova-miroslava
+gs2026-r3	group	skupina H	guzmova-miroslava	maggioni-marco	2	0	guzmova-miroslava
+gs2026-r3	group	skupina H	fares-amin	valovcan-jaroslav-ml	2	1	fares-amin
+gs2026-r3	group	skupina H	fares-amin	hura-martin	2	1	fares-amin
+gs2026-r3	group	skupina H	fares-amin	gallo-viliam	2	0	fares-amin
+gs2026-r3	group	skupina H	fares-amin	vozar-vladimir	2	0	fares-amin
+gs2026-r3	group	skupina H	fares-amin	gunisova-lenka	2	0	fares-amin
+gs2026-r3	group	skupina H	fares-amin	maggioni-marco	2	0	fares-amin
+gs2026-r3	group	skupina H	valovcan-jaroslav-ml	hura-martin	2	0	valovcan-jaroslav-ml
+gs2026-r3	group	skupina H	valovcan-jaroslav-ml	gallo-viliam	2	0	valovcan-jaroslav-ml
+gs2026-r3	group	skupina H	valovcan-jaroslav-ml	vozar-vladimir	2	1	valovcan-jaroslav-ml
+gs2026-r3	group	skupina H	valovcan-jaroslav-ml	gunisova-lenka	2	0	valovcan-jaroslav-ml
+gs2026-r3	group	skupina H	valovcan-jaroslav-ml	maggioni-marco	2	0	valovcan-jaroslav-ml
+gs2026-r3	group	skupina H	hura-martin	gallo-viliam	2	0	hura-martin
+gs2026-r3	group	skupina H	hura-martin	vozar-vladimir	2	0	hura-martin
+gs2026-r3	group	skupina H	hura-martin	gunisova-lenka	2	0	hura-martin
+gs2026-r3	group	skupina H	hura-martin	maggioni-marco	2	0	hura-martin
+gs2026-r3	group	skupina H	gallo-viliam	vozar-vladimir	2	1	gallo-viliam
+gs2026-r3	group	skupina H	gallo-viliam	gunisova-lenka	2	0	gallo-viliam
+gs2026-r3	group	skupina H	gallo-viliam	maggioni-marco	2	0	gallo-viliam
+gs2026-r3	group	skupina H	vozar-vladimir	gunisova-lenka	2	0	vozar-vladimir
+gs2026-r3	group	skupina H	vozar-vladimir	maggioni-marco	2	0	vozar-vladimir
+gs2026-r3	group	skupina H	gunisova-lenka	maggioni-marco	2	0	gunisova-lenka
+gs2026-r3	group	skupina I	satka-miroslav	valovcan-jaroslav-st	2	0	satka-miroslav
+gs2026-r3	group	skupina I	satka-miroslav	skultety-pavol	2	0	satka-miroslav
+gs2026-r3	group	skupina I	satka-miroslav	vas-viktor	2	1	satka-miroslav
+gs2026-r3	group	skupina I	satka-miroslav	markulik-jaroslav	2	0	satka-miroslav
+gs2026-r3	group	skupina I	satka-miroslav	danylyev-viktor	2	0	satka-miroslav
+gs2026-r3	group	skupina I	satka-miroslav	holcsik-maros	2	0	satka-miroslav
+gs2026-r3	group	skupina I	satka-miroslav	sedlacko-frantisek	2	0	satka-miroslav
+gs2026-r3	group	skupina I	satka-miroslav	mikula-michal	2	1	satka-miroslav
+gs2026-r3	group	skupina I	valovcan-jaroslav-st	skultety-pavol	2	0	valovcan-jaroslav-st
+gs2026-r3	group	skupina I	valovcan-jaroslav-st	vas-viktor	2	1	valovcan-jaroslav-st
+gs2026-r3	group	skupina I	valovcan-jaroslav-st	markulik-jaroslav	2	0	valovcan-jaroslav-st
+gs2026-r3	group	skupina I	valovcan-jaroslav-st	danylyev-viktor	2	1	valovcan-jaroslav-st
+gs2026-r3	group	skupina I	valovcan-jaroslav-st	holcsik-maros	2	0	valovcan-jaroslav-st
+gs2026-r3	group	skupina I	valovcan-jaroslav-st	sedlacko-frantisek	2	0	valovcan-jaroslav-st
+gs2026-r3	group	skupina I	valovcan-jaroslav-st	mikula-michal	2	0	valovcan-jaroslav-st
+gs2026-r3	group	skupina I	skultety-pavol	vas-viktor	2	0	skultety-pavol
+gs2026-r3	group	skupina I	skultety-pavol	markulik-jaroslav	2	1	skultety-pavol
+gs2026-r3	group	skupina I	skultety-pavol	danylyev-viktor	2	0	skultety-pavol
+gs2026-r3	group	skupina I	skultety-pavol	holcsik-maros	2	0	skultety-pavol
+gs2026-r3	group	skupina I	skultety-pavol	sedlacko-frantisek	2	0	skultety-pavol
+gs2026-r3	group	skupina I	skultety-pavol	mikula-michal	2	0	skultety-pavol
+gs2026-r3	group	skupina I	vas-viktor	markulik-jaroslav	2	1	vas-viktor
+gs2026-r3	group	skupina I	vas-viktor	danylyev-viktor	2	0	vas-viktor
+gs2026-r3	group	skupina I	vas-viktor	holcsik-maros	2	0	vas-viktor
+gs2026-r3	group	skupina I	vas-viktor	sedlacko-frantisek	1	2	sedlacko-frantisek
+gs2026-r3	group	skupina I	vas-viktor	mikula-michal	2	1	vas-viktor
+gs2026-r3	group	skupina I	markulik-jaroslav	danylyev-viktor	2	1	markulik-jaroslav
+gs2026-r3	group	skupina I	markulik-jaroslav	holcsik-maros	2	1	markulik-jaroslav
+gs2026-r3	group	skupina I	markulik-jaroslav	sedlacko-frantisek	2	1	markulik-jaroslav
+gs2026-r3	group	skupina I	markulik-jaroslav	mikula-michal	2	0	markulik-jaroslav
+gs2026-r3	group	skupina I	danylyev-viktor	holcsik-maros	2	1	danylyev-viktor
+gs2026-r3	group	skupina I	danylyev-viktor	sedlacko-frantisek	2	1	danylyev-viktor
+gs2026-r3	group	skupina I	danylyev-viktor	mikula-michal	2	1	danylyev-viktor
+gs2026-r3	group	skupina I	holcsik-maros	sedlacko-frantisek	2	1	holcsik-maros
+gs2026-r3	group	skupina I	holcsik-maros	mikula-michal	2	1	holcsik-maros
+gs2026-r3	group	skupina I	sedlacko-frantisek	mikula-michal	2	1	sedlacko-frantisek
+gs2026-r3	group	skupina J	sajankova-zuzana	markaj-mark	2	1	sajankova-zuzana
+gs2026-r3	group	skupina J	sajankova-zuzana	klauco-michal	2	0	sajankova-zuzana
+gs2026-r3	group	skupina J	sajankova-zuzana	porubsky-peter	2	0	sajankova-zuzana
+gs2026-r3	group	skupina J	sajankova-zuzana	batalik-martin	2	0	sajankova-zuzana
+gs2026-r3	group	skupina J	sajankova-zuzana	ziska-vladimir	2	0	sajankova-zuzana
+gs2026-r3	group	skupina J	sajankova-zuzana	sramko-michal	2	0	sajankova-zuzana
+gs2026-r3	group	skupina J	sajankova-zuzana	acs-silvester	2	0	sajankova-zuzana
+gs2026-r3	group	skupina J	sajankova-zuzana	mikus-erik	2	0	sajankova-zuzana
+gs2026-r3	group	skupina J	markaj-mark	klauco-michal	2	0	markaj-mark
+gs2026-r3	group	skupina J	markaj-mark	porubsky-peter	2	1	markaj-mark
+gs2026-r3	group	skupina J	markaj-mark	batalik-martin	2	1	markaj-mark
+gs2026-r3	group	skupina J	markaj-mark	ziska-vladimir	2	1	markaj-mark
+gs2026-r3	group	skupina J	markaj-mark	sramko-michal	2	0	markaj-mark
+gs2026-r3	group	skupina J	markaj-mark	acs-silvester	2	0	markaj-mark
+gs2026-r3	group	skupina J	markaj-mark	mikus-erik	2	0	markaj-mark
+gs2026-r3	group	skupina J	klauco-michal	porubsky-peter	2	0	klauco-michal
+gs2026-r3	group	skupina J	klauco-michal	batalik-martin	2	0	klauco-michal
+gs2026-r3	group	skupina J	klauco-michal	ziska-vladimir	2	0	klauco-michal
+gs2026-r3	group	skupina J	klauco-michal	sramko-michal	2	0	klauco-michal
+gs2026-r3	group	skupina J	klauco-michal	acs-silvester	2	0	klauco-michal
+gs2026-r3	group	skupina J	klauco-michal	mikus-erik	2	0	klauco-michal
+gs2026-r3	group	skupina J	porubsky-peter	batalik-martin	2	1	porubsky-peter
+gs2026-r3	group	skupina J	porubsky-peter	ziska-vladimir	2	1	porubsky-peter
+gs2026-r3	group	skupina J	porubsky-peter	sramko-michal	2	1	porubsky-peter
+gs2026-r3	group	skupina J	porubsky-peter	acs-silvester	2	0	porubsky-peter
+gs2026-r3	group	skupina J	porubsky-peter	mikus-erik	2	0	porubsky-peter
+gs2026-r3	group	skupina J	batalik-martin	ziska-vladimir	2	0	batalik-martin
+gs2026-r3	group	skupina J	batalik-martin	sramko-michal	2	0	batalik-martin
+gs2026-r3	group	skupina J	batalik-martin	acs-silvester	2	0	batalik-martin
+gs2026-r3	group	skupina J	batalik-martin	mikus-erik	2	0	batalik-martin
+gs2026-r3	group	skupina J	ziska-vladimir	sramko-michal	2	0	ziska-vladimir
+gs2026-r3	group	skupina J	ziska-vladimir	acs-silvester	2	0	ziska-vladimir
+gs2026-r3	group	skupina J	ziska-vladimir	mikus-erik	2	0	ziska-vladimir
+gs2026-r3	group	skupina J	sramko-michal	acs-silvester	2	0	sramko-michal
+gs2026-r3	group	skupina J	sramko-michal	mikus-erik	2	1	sramko-michal
+gs2026-r3	group	skupina J	acs-silvester	mikus-erik	2	0	acs-silvester
+gs2026-r3	group	skupina K	skyba-marek	prykhodko-maksym	2	0	skyba-marek
+gs2026-r3	group	skupina K	skyba-marek	kravcak-milan	2	0	skyba-marek
+gs2026-r3	group	skupina K	skyba-marek	manuch-lubomir	0	2	manuch-lubomir
+gs2026-r3	group	skupina K	skyba-marek	capkovic-milan	1	2	capkovic-milan
+gs2026-r3	group	skupina K	skyba-marek	mullerova-renata	2	0	skyba-marek
+gs2026-r3	group	skupina K	skyba-marek	skultety-peter	2	0	skyba-marek
+gs2026-r3	group	skupina K	skyba-marek	bogdanov-nikita	2	0	skyba-marek
+gs2026-r3	group	skupina K	skyba-marek	panshin-kirill	2	0	skyba-marek
+gs2026-r3	group	skupina K	prykhodko-maksym	kravcak-milan	2	1	prykhodko-maksym
+gs2026-r3	group	skupina K	prykhodko-maksym	manuch-lubomir	2	0	prykhodko-maksym
+gs2026-r3	group	skupina K	prykhodko-maksym	capkovic-milan	1	2	capkovic-milan
+gs2026-r3	group	skupina K	prykhodko-maksym	mullerova-renata	2	0	prykhodko-maksym
+gs2026-r3	group	skupina K	prykhodko-maksym	skultety-peter	2	0	prykhodko-maksym
+gs2026-r3	group	skupina K	prykhodko-maksym	bogdanov-nikita	2	0	prykhodko-maksym
+gs2026-r3	group	skupina K	prykhodko-maksym	panshin-kirill	2	0	prykhodko-maksym
+gs2026-r3	group	skupina K	kravcak-milan	manuch-lubomir	2	0	kravcak-milan
+gs2026-r3	group	skupina K	kravcak-milan	capkovic-milan	2	1	kravcak-milan
+gs2026-r3	group	skupina K	kravcak-milan	mullerova-renata	2	0	kravcak-milan
+gs2026-r3	group	skupina K	kravcak-milan	skultety-peter	2	0	kravcak-milan
+gs2026-r3	group	skupina K	kravcak-milan	bogdanov-nikita	2	0	kravcak-milan
+gs2026-r3	group	skupina K	kravcak-milan	panshin-kirill	2	0	kravcak-milan
+gs2026-r3	group	skupina K	manuch-lubomir	capkovic-milan	2	0	manuch-lubomir
+gs2026-r3	group	skupina K	manuch-lubomir	mullerova-renata	2	0	manuch-lubomir
+gs2026-r3	group	skupina K	manuch-lubomir	skultety-peter	2	0	manuch-lubomir
+gs2026-r3	group	skupina K	manuch-lubomir	bogdanov-nikita	2	0	manuch-lubomir
+gs2026-r3	group	skupina K	manuch-lubomir	panshin-kirill	2	0	manuch-lubomir
+gs2026-r3	group	skupina K	capkovic-milan	mullerova-renata	2	0	capkovic-milan
+gs2026-r3	group	skupina K	capkovic-milan	skultety-peter	2	0	capkovic-milan
+gs2026-r3	group	skupina K	capkovic-milan	bogdanov-nikita	2	0	capkovic-milan
+gs2026-r3	group	skupina K	capkovic-milan	panshin-kirill	2	0	capkovic-milan
+gs2026-r3	group	skupina K	mullerova-renata	skultety-peter	2	0	mullerova-renata
+gs2026-r3	group	skupina K	mullerova-renata	bogdanov-nikita	2	0	mullerova-renata
+gs2026-r3	group	skupina K	mullerova-renata	panshin-kirill	2	0	mullerova-renata
+gs2026-r3	group	skupina K	skultety-peter	bogdanov-nikita	2	0	skultety-peter
+gs2026-r3	group	skupina K	skultety-peter	panshin-kirill	2	0	skultety-peter
+gs2026-r3	group	skupina K	bogdanov-nikita	panshin-kirill	2	0	bogdanov-nikita
+gs2026-r3	group	skupina L	bulak-roman	volcik-pavel	2	1	bulak-roman
+gs2026-r3	group	skupina L	bulak-roman	pastva-ondrej	1	2	pastva-ondrej
+gs2026-r3	group	skupina L	bulak-roman	maholiak-michal	2	0	bulak-roman
+gs2026-r3	group	skupina L	bulak-roman	pajbach-michal	1	2	pajbach-michal
+gs2026-r3	group	skupina L	bulak-roman	liska-pavol	2	0	bulak-roman
+gs2026-r3	group	skupina L	bulak-roman	petrak-jozef	2	1	bulak-roman
+gs2026-r3	group	skupina L	bulak-roman	magat-tomas	2	0	bulak-roman
+gs2026-r3	group	skupina L	bulak-roman	kubinova-dorka	2	0	bulak-roman
+gs2026-r3	group	skupina L	volcik-pavel	pastva-ondrej	2	1	volcik-pavel
+gs2026-r3	group	skupina L	volcik-pavel	maholiak-michal	2	0	volcik-pavel
+gs2026-r3	group	skupina L	volcik-pavel	pajbach-michal	2	0	volcik-pavel
+gs2026-r3	group	skupina L	volcik-pavel	liska-pavol	2	1	volcik-pavel
+gs2026-r3	group	skupina L	volcik-pavel	petrak-jozef	0	2	petrak-jozef
+gs2026-r3	group	skupina L	volcik-pavel	magat-tomas	2	0	volcik-pavel
+gs2026-r3	group	skupina L	volcik-pavel	kubinova-dorka	2	0	volcik-pavel
+gs2026-r3	group	skupina L	pastva-ondrej	maholiak-michal	0	2	maholiak-michal
+gs2026-r3	group	skupina L	pastva-ondrej	pajbach-michal	2	1	pastva-ondrej
+gs2026-r3	group	skupina L	pastva-ondrej	liska-pavol	2	1	pastva-ondrej
+gs2026-r3	group	skupina L	pastva-ondrej	petrak-jozef	2	1	pastva-ondrej
+gs2026-r3	group	skupina L	pastva-ondrej	magat-tomas	2	0	pastva-ondrej
+gs2026-r3	group	skupina L	pastva-ondrej	kubinova-dorka	2	0	pastva-ondrej
+gs2026-r3	group	skupina L	maholiak-michal	pajbach-michal	2	0	maholiak-michal
+gs2026-r3	group	skupina L	maholiak-michal	liska-pavol	2	0	maholiak-michal
+gs2026-r3	group	skupina L	maholiak-michal	petrak-jozef	2	1	maholiak-michal
+gs2026-r3	group	skupina L	maholiak-michal	magat-tomas	2	0	maholiak-michal
+gs2026-r3	group	skupina L	maholiak-michal	kubinova-dorka	2	0	maholiak-michal
+gs2026-r3	group	skupina L	pajbach-michal	liska-pavol	2	0	pajbach-michal
+gs2026-r3	group	skupina L	pajbach-michal	petrak-jozef	2	0	pajbach-michal
+gs2026-r3	group	skupina L	pajbach-michal	magat-tomas	2	0	pajbach-michal
+gs2026-r3	group	skupina L	pajbach-michal	kubinova-dorka	2	0	pajbach-michal
+gs2026-r3	group	skupina L	liska-pavol	petrak-jozef	2	1	liska-pavol
+gs2026-r3	group	skupina L	liska-pavol	magat-tomas	2	0	liska-pavol
+gs2026-r3	group	skupina L	liska-pavol	kubinova-dorka	2	1	liska-pavol
+gs2026-r3	group	skupina L	petrak-jozef	magat-tomas	2	0	petrak-jozef
+gs2026-r3	group	skupina L	petrak-jozef	kubinova-dorka	2	0	petrak-jozef
+gs2026-r3	group	skupina L	magat-tomas	kubinova-dorka	2	1	magat-tomas
+gs2026-r3	playoff	hlavný pavúk: 1. kolo	jakubec-peter	ziska-vladimir	2	0	jakubec-peter
+gs2026-r3	playoff	hlavný pavúk: 1. kolo	takacs-tamas	skultety-pavol	2	0	takacs-tamas
+gs2026-r3	playoff	hlavný pavúk: 1. kolo	biacko-ivan	kunik-marian	2	0	biacko-ivan
+gs2026-r3	playoff	hlavný pavúk: 1. kolo	liskova-miriam	maholiak-michal	2	0	liskova-miriam
+gs2026-r3	playoff	hlavný pavúk: 1. kolo	suranovsky-martin	molitorisova-lenka	2	0	suranovsky-martin
+gs2026-r3	playoff	hlavný pavúk: 1. kolo	fares-amin	bujdak-juraj	2	1	fares-amin
+gs2026-r3	playoff	hlavný pavúk: 1. kolo	satka-miroslav	batalik-martin	2	0	satka-miroslav
+gs2026-r3	playoff	hlavný pavúk: 1. kolo	volcik-pavel	manuch-lubomir	2	0	volcik-pavel
+gs2026-r3	playoff	hlavný pavúk: 1. kolo	koritsansky-dominik	capkovic-milan	2	0	koritsansky-dominik
+gs2026-r3	playoff	hlavný pavúk: 1. kolo	kundrik-marek	hudec-jan	2	0	kundrik-marek
+gs2026-r3	playoff	hlavný pavúk: 1. kolo	bulak-roman	konarik-ladislav	1	2	konarik-ladislav
+gs2026-r3	playoff	hlavný pavúk: 1. kolo	valovcan-jaroslav-st	porubcan-zdenko	2	0	valovcan-jaroslav-st
+gs2026-r3	playoff	hlavný pavúk: 1. kolo	mocik-tomas	zradula-radoslav	2	1	mocik-tomas
+gs2026-r3	playoff	hlavný pavúk: 1. kolo	kotov-denis	valovcan-jaroslav-ml	0	2	valovcan-jaroslav-ml
+gs2026-r3	playoff	hlavný pavúk: 1. kolo	vanek-richard	dulay-jan	2	0	vanek-richard
+gs2026-r3	playoff	hlavný pavúk: 1. kolo	liptak-daniel	kubalcova-xenia	2	0	liptak-daniel
+gs2026-r3	playoff	hlavný pavúk: 1. kolo	klauco-matej	babic-adam	2	0	klauco-matej
+gs2026-r3	playoff	hlavný pavúk: 1. kolo	klauco-michal	kravcak-milan	2	0	klauco-michal
+gs2026-r3	playoff	hlavný pavúk: 1. kolo	guzmova-miroslava	szczeczina-peter	2	0	guzmova-miroslava
+gs2026-r3	playoff	hlavný pavúk: 1. kolo	holecek-svetozar	zemanova-katarina	1	2	zemanova-katarina
+gs2026-r3	playoff	hlavný pavúk: 1. kolo	sajankova-zuzana	laurov-miroslav	2	0	sajankova-zuzana
+gs2026-r3	playoff	hlavný pavúk: 1. kolo	kozmer-kevin	pastva-ondrej	1	2	pastva-ondrej
+gs2026-r3	playoff	hlavný pavúk: 1. kolo	skyba-marek	sedlacek-michal	2	0	skyba-marek
+gs2026-r3	playoff	hlavný pavúk: 1. kolo	hlavati-zdeno	vas-viktor	2	1	hlavati-zdeno
+gs2026-r3	playoff	hlavný pavúk: 1. kolo	fulop-matej	pajbach-michal	1	2	pajbach-michal
+gs2026-r3	playoff	hlavný pavúk: 1. kolo	danylyev-oleksandr	porubsky-peter	1	2	porubsky-peter
+gs2026-r3	playoff	hlavný pavúk: 1. kolo	holan-marek	poliak-miroslav	2	0	holan-marek
+gs2026-r3	playoff	hlavný pavúk: 1. kolo	prykhodko-maksym	bojtos-roland	2	1	prykhodko-maksym
+gs2026-r3	playoff	hlavný pavúk: 1. kolo	bazalka-zdenek	markulik-jaroslav	2	0	bazalka-zdenek
+gs2026-r3	playoff	hlavný pavúk: 1. kolo	jerzova-katarina	zvarik-brano	2	0	jerzova-katarina
+gs2026-r3	playoff	hlavný pavúk: 1. kolo	markaj-mark	hura-martin	2	0	markaj-mark
+gs2026-r3	playoff	hlavný pavúk: 1. kolo	kundrak-tomas	donoval-lubos	2	0	kundrak-tomas
+gs2026-r3	playoff	hlavný pavúk: 16-finále	jakubec-peter	takacs-tamas	3	1	jakubec-peter
+gs2026-r3	playoff	hlavný pavúk: 16-finále	biacko-ivan	liskova-miriam	0	3	liskova-miriam
+gs2026-r3	playoff	hlavný pavúk: 16-finále	suranovsky-martin	fares-amin	3	0	suranovsky-martin
+gs2026-r3	playoff	hlavný pavúk: 16-finále	satka-miroslav	volcik-pavel	3	0	satka-miroslav
+gs2026-r3	playoff	hlavný pavúk: 16-finále	koritsansky-dominik	kundrik-marek	3	1	koritsansky-dominik
+gs2026-r3	playoff	hlavný pavúk: 16-finále	konarik-ladislav	valovcan-jaroslav-st	0	3	valovcan-jaroslav-st
+gs2026-r3	playoff	hlavný pavúk: 16-finále	mocik-tomas	valovcan-jaroslav-ml	3	1	mocik-tomas
+gs2026-r3	playoff	hlavný pavúk: 16-finále	vanek-richard	liptak-daniel	3	0	vanek-richard
+gs2026-r3	playoff	hlavný pavúk: 16-finále	klauco-matej	klauco-michal	2	3	klauco-michal
+gs2026-r3	playoff	hlavný pavúk: 16-finále	guzmova-miroslava	zemanova-katarina	0	3	zemanova-katarina
+gs2026-r3	playoff	hlavný pavúk: 16-finále	sajankova-zuzana	pastva-ondrej	3	1	sajankova-zuzana
+gs2026-r3	playoff	hlavný pavúk: 16-finále	skyba-marek	hlavati-zdeno	0	3	hlavati-zdeno
+gs2026-r3	playoff	hlavný pavúk: 16-finále	pajbach-michal	porubsky-peter	3	1	pajbach-michal
+gs2026-r3	playoff	hlavný pavúk: 16-finále	holan-marek	prykhodko-maksym	1	3	prykhodko-maksym
+gs2026-r3	playoff	hlavný pavúk: 16-finále	bazalka-zdenek	jerzova-katarina	3	0	bazalka-zdenek
+gs2026-r3	playoff	hlavný pavúk: 16-finále	markaj-mark	kundrak-tomas	3	1	markaj-mark
+gs2026-r3	playoff	hlavný pavúk: osemfinále	jakubec-peter	liskova-miriam	3	0	jakubec-peter
+gs2026-r3	playoff	hlavný pavúk: osemfinále	suranovsky-martin	satka-miroslav	0	3	satka-miroslav
+gs2026-r3	playoff	hlavný pavúk: osemfinále	koritsansky-dominik	valovcan-jaroslav-st	3	1	koritsansky-dominik
+gs2026-r3	playoff	hlavný pavúk: osemfinále	mocik-tomas	vanek-richard	1	3	vanek-richard
+gs2026-r3	playoff	hlavný pavúk: osemfinále	klauco-michal	zemanova-katarina	3	0	klauco-michal
+gs2026-r3	playoff	hlavný pavúk: osemfinále	sajankova-zuzana	hlavati-zdeno	3	2	sajankova-zuzana
+gs2026-r3	playoff	hlavný pavúk: osemfinále	pajbach-michal	prykhodko-maksym	0	3	prykhodko-maksym
+gs2026-r3	playoff	hlavný pavúk: osemfinále	bazalka-zdenek	markaj-mark	3	1	bazalka-zdenek
+gs2026-r3	playoff	hlavný pavúk: štvrťfinále	jakubec-peter	satka-miroslav	3	0	jakubec-peter
+gs2026-r3	playoff	hlavný pavúk: štvrťfinále	koritsansky-dominik	vanek-richard	3	1	koritsansky-dominik
+gs2026-r3	playoff	hlavný pavúk: štvrťfinále	klauco-michal	sajankova-zuzana	3	2	klauco-michal
+gs2026-r3	playoff	hlavný pavúk: štvrťfinále	prykhodko-maksym	bazalka-zdenek	0	3	bazalka-zdenek
+gs2026-r3	playoff	hlavný pavúk: semifinále	jakubec-peter	koritsansky-dominik	3	2	jakubec-peter
+gs2026-r3	playoff	hlavný pavúk: semifinále	klauco-michal	bazalka-zdenek	3	2	klauco-michal
+gs2026-r3	playoff	hlavný pavúk: finále	jakubec-peter	klauco-michal	1	3	klauco-michal
+gs2026-r3	playoff	hlavný pavúk: o 3. miesto	koritsansky-dominik	bazalka-zdenek	3	0	koritsansky-dominik
+gs2026-r3	consolation	útecha: predkolo	csonka-mathias	mikula-michal	0	2	mikula-michal
+gs2026-r3	consolation	útecha: predkolo	holcsik-maros	mikus-erik	2	1	holcsik-maros
+gs2026-r3	consolation	útecha: predkolo	cebik-mario	bagin-miroslav	0	2	bagin-miroslav
+gs2026-r3	consolation	útecha: predkolo	gunisova-lenka	panshin-kirill	2	0	gunisova-lenka
+gs2026-r3	consolation	útecha: predkolo	skultety-peter	kubinova-dorka	2	0	skultety-peter
+gs2026-r3	consolation	útecha: predkolo	tvrdon-peter	mrmus-anton	2	0	tvrdon-peter
+gs2026-r3	consolation	útecha: 1. kolo	skultety-pavol	koys-andrej	2	0	skultety-pavol
+gs2026-r3	consolation	útecha: 1. kolo	maholiak-michal	mikula-michal	0	2	mikula-michal
+gs2026-r3	consolation	útecha: 1. kolo	kunik-marian	kunik-tomas	0	2	kunik-tomas
+gs2026-r3	consolation	útecha: 1. kolo	bujdak-juraj	magat-tomas	0	2	magat-tomas
+gs2026-r3	consolation	útecha: 1. kolo	molitorisova-lenka	klauco-emil	1	2	klauco-emil
+gs2026-r3	consolation	útecha: 1. kolo	manuch-lubomir	holcsik-maros	1	2	holcsik-maros
+gs2026-r3	consolation	útecha: 1. kolo	hudec-jan	sedlacko-frantisek	0	2	sedlacko-frantisek
+gs2026-r3	consolation	útecha: 1. kolo	capkovic-milan	dubova-maria	2	0	capkovic-milan
+gs2026-r3	consolation	útecha: 1. kolo	porubcan-zdenko	petrak-jozef	2	1	porubcan-zdenko
+gs2026-r3	consolation	útecha: 1. kolo	bulak-roman	borucka-milada	2	0	bulak-roman
+gs2026-r3	consolation	útecha: 1. kolo	kotov-denis	bagin-miroslav	2	0	kotov-denis
+gs2026-r3	consolation	útecha: 1. kolo	zradula-radoslav	danylyev-viktor	0	2	danylyev-viktor
+gs2026-r3	consolation	útecha: 1. kolo	kubalcova-xenia	harcek-peter	2	0	kubalcova-xenia
+gs2026-r3	consolation	útecha: 1. kolo	dulay-jan	lukacek-julian-st	2	0	dulay-jan
+gs2026-r3	consolation	útecha: 1. kolo	kravcak-milan	debnarova-dasenka	2	0	kravcak-milan
+gs2026-r3	consolation	útecha: 1. kolo	babic-adam	liska-pavol	2	0	babic-adam
+gs2026-r3	consolation	útecha: 1. kolo	holecek-svetozar	gunisova-lenka	2	0	holecek-svetozar
+gs2026-r3	consolation	útecha: 1. kolo	szczeczina-peter	polackova-luboslava	2	1	szczeczina-peter
+gs2026-r3	consolation	útecha: 1. kolo	kozmer-kevin	sendzo-imrich	2	0	kozmer-kevin
+gs2026-r3	consolation	útecha: 1. kolo	laurov-miroslav	gallo-viliam	2	0	laurov-miroslav
+gs2026-r3	consolation	útecha: 1. kolo	vas-viktor	skultety-peter	2	0	vas-viktor
+gs2026-r3	consolation	útecha: 1. kolo	sedlacek-michal	sramko-michal	1	2	sramko-michal
+gs2026-r3	consolation	útecha: 1. kolo	danylyev-oleksandr	husarova-anna	2	0	danylyev-oleksandr
+gs2026-r3	consolation	útecha: 1. kolo	fulop-matej	mullerova-renata	2	0	fulop-matej
+gs2026-r3	consolation	útecha: 1. kolo	bojtos-roland	vyskoc-roman	2	0	bojtos-roland
+gs2026-r3	consolation	útecha: 1. kolo	poliak-miroslav	vozar-vladimir	0	2	vozar-vladimir
+gs2026-r3	consolation	útecha: 1. kolo	zvarik-brano	tvrdon-peter	2	1	zvarik-brano
+gs2026-r3	consolation	útecha: 1. kolo	markulik-jaroslav	polak-milan	0	2	polak-milan
+gs2026-r3	consolation	útecha: 1. kolo	donoval-lubos	acs-silvester	2	0	donoval-lubos
+gs2026-r3	consolation	útecha: 1. kolo	hura-martin	polacek-peter	2	0	hura-martin
+gs2026-r3	consolation	útecha: 16-finále	skultety-pavol	ziska-vladimir	2	0	skultety-pavol
+gs2026-r3	consolation	útecha: 16-finále	mikula-michal	kunik-tomas	2	0	mikula-michal
+gs2026-r3	consolation	útecha: 16-finále	magat-tomas	klauco-emil	0	2	klauco-emil
+gs2026-r3	consolation	útecha: 16-finále	holcsik-maros	mrazkova-viera	2	0	holcsik-maros
+gs2026-r3	consolation	útecha: 16-finále	sedlacko-frantisek	capkovic-milan	1	2	capkovic-milan
+gs2026-r3	consolation	útecha: 16-finále	porubcan-zdenko	bulak-roman	1	2	bulak-roman
+gs2026-r3	consolation	útecha: 16-finále	kotov-denis	danylyev-viktor	0	2	danylyev-viktor
+gs2026-r3	consolation	útecha: 16-finále	kravcak-milan	babic-adam	2	1	kravcak-milan
+gs2026-r3	consolation	útecha: 16-finále	holecek-svetozar	szczeczina-peter	2	0	holecek-svetozar
+gs2026-r3	consolation	útecha: 16-finále	kozmer-kevin	laurov-miroslav	2	1	kozmer-kevin
+gs2026-r3	consolation	útecha: 16-finále	vas-viktor	sramko-michal	2	0	vas-viktor
+gs2026-r3	consolation	útecha: 16-finále	danylyev-oleksandr	fulop-matej	2	0	danylyev-oleksandr
+gs2026-r3	consolation	útecha: 16-finále	bojtos-roland	vozar-vladimir	2	0	bojtos-roland
+gs2026-r3	consolation	útecha: 16-finále	zvarik-brano	polak-milan	0	2	polak-milan
+gs2026-r3	consolation	útecha: 16-finále	donoval-lubos	hura-martin	1	2	hura-martin
+gs2026-r3	consolation	útecha: osemfinále	skultety-pavol	mikula-michal	0	2	mikula-michal
+gs2026-r3	consolation	útecha: osemfinále	klauco-emil	holcsik-maros	1	2	holcsik-maros
+gs2026-r3	consolation	útecha: osemfinále	capkovic-milan	bulak-roman	0	2	bulak-roman
+gs2026-r3	consolation	útecha: osemfinále	danylyev-viktor	kubalcova-xenia	2	0	danylyev-viktor
+gs2026-r3	consolation	útecha: osemfinále	kravcak-milan	holecek-svetozar	0	2	holecek-svetozar
+gs2026-r3	consolation	útecha: osemfinále	kozmer-kevin	vas-viktor	1	2	vas-viktor
+gs2026-r3	consolation	útecha: osemfinále	danylyev-oleksandr	bojtos-roland	2	1	danylyev-oleksandr
+gs2026-r3	consolation	útecha: osemfinále	polak-milan	hura-martin	1	2	hura-martin
+gs2026-r3	consolation	útecha: štvrťfinále	mikula-michal	holcsik-maros	2	0	mikula-michal
+gs2026-r3	consolation	útecha: štvrťfinále	bulak-roman	danylyev-viktor	2	0	bulak-roman
+gs2026-r3	consolation	útecha: štvrťfinále	holecek-svetozar	vas-viktor	0	2	vas-viktor
+gs2026-r3	consolation	útecha: štvrťfinále	danylyev-oleksandr	hura-martin	2	0	danylyev-oleksandr
+gs2026-r3	consolation	útecha: semifinále	mikula-michal	bulak-roman	0	2	bulak-roman
+gs2026-r3	consolation	útecha: semifinále	vas-viktor	danylyev-oleksandr	0	2	danylyev-oleksandr
+gs2026-r3	consolation	útecha: finále	bulak-roman	danylyev-oleksandr	0	2	danylyev-oleksandr
+gs2026-r3	consolation	útecha: o 3. miesto	mikula-michal	vas-viktor	0	2	vas-viktor
